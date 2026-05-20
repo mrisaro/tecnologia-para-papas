@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Clase 1 — WhatsApp &#8212; Curso de Tecnología</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=c2101671"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clase-1-whatsapp';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Clase 2 — Google Meet" href="clase-2-meet.html" />
+    <link rel="prev" title="Cómo usar este curso" href="como-usar.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Curso de Tecnología</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="como-usar.html">Cómo usar este curso</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clase 1 — WhatsApp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-2-meet.html">Clase 2 — Google Meet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-3-calendar.html">Clase 3 — Google Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-4-docs-sheets.html">Clase 4 — Google Docs y Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-5-ia.html">Clase 5 — Inteligencia Artificial (IA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursos.html">Recursos y chuleta general</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/clase-1-whatsapp.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Clase 1 — WhatsApp</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-les-sirve">Para qué les sirve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-la-vida-real">Ejemplo de la vida real</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso">Paso a paso</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-whatsapp-y-mirar-las-pantallas">1. Abrir WhatsApp y mirar las pantallas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandar-un-mensaje-de-texto-repaso">2. Mandar un mensaje de texto (repaso)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandar-una-nota-de-voz-esto-es-nuevo">3. Mandar una nota de voz 🎤 (esto es nuevo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hacer-una-videollamada">4. Hacer una videollamada 📹</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandar-y-guardar-fotos">5. Mandar y guardar fotos 📸</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-grupo-familiar">6. Crear un grupo familiar 👨‍👩‍👧‍👦</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-la-ubicacion">7. Compartir la ubicación 📍</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuidado-con-las-estafas">⚠️ Cuidado con las estafas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="clase-1-whatsapp">
+<h1>Clase 1 — WhatsApp<a class="headerlink" href="#clase-1-whatsapp" title="Link to this heading">#</a></h1>
+<p>⏱️ <strong>Duración:</strong> 1 hora
+📱 <strong>Dispositivo:</strong> celular (principal) y computadora (opcional)</p>
+<section id="para-que-les-sirve">
+<h2>Para qué les sirve<a class="headerlink" href="#para-que-les-sirve" title="Link to this heading">#</a></h2>
+<p>WhatsApp es la app que <strong>conecta con casi toda la familia y amigos</strong> sin gastar dinero en llamadas. Con WhatsApp pueden:</p>
+<ul class="simple">
+<li><p>Mandar mensajes de texto a un nieto.</p></li>
+<li><p>Mandar <strong>notas de voz</strong> cuando da pereza escribir.</p></li>
+<li><p>Hacer <strong>videollamadas</strong> para ver a alguien que está lejos.</p></li>
+<li><p>Mandar fotos del cumpleaños, del jardín, de una receta.</p></li>
+<li><p>Tener un <strong>grupo familiar</strong> para compartir noticias.</p></li>
+<li><p>Mandar la <strong>ubicación</strong> cuando alguien los pasa a buscar.</p></li>
+</ul>
+<section id="ejemplo-de-la-vida-real">
+<h3>Ejemplo de la vida real<a class="headerlink" href="#ejemplo-de-la-vida-real" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><em>«Mamá, ¿estás bien? Hace dos días que no sé nada de vos.»</em></p>
+<p>En vez de llamarla por teléfono (que cuesta plata y a veces ella no escucha), pueden mandarle una <strong>nota de voz</strong>: aprietan un botón, le hablan como si fuera un mensaje del contestador, y listo. Ella la escucha cuando puede.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="antes-de-empezar">
+<h2>Antes de empezar<a class="headerlink" href="#antes-de-empezar" title="Link to this heading">#</a></h2>
+<p>Tienen que tener:</p>
+<ul class="simple">
+<li><p>WhatsApp instalado en el celular (el ícono verde con un teléfono blanco).</p></li>
+<li><p>El celular conectado al <strong>Wi-Fi</strong> (para no gastar datos).</p></li>
+<li><p>La <strong>lista de contactos</strong> del celular con los teléfonos de la familia guardados.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Si no saben si WhatsApp está instalado, busquen en la pantalla del celular un cuadradito <strong>verde con un teléfono blanco adentro</strong>. Si lo ven, está instalado.</p>
+</div>
+</section>
+<section id="paso-a-paso">
+<h2>Paso a paso<a class="headerlink" href="#paso-a-paso" title="Link to this heading">#</a></h2>
+<section id="abrir-whatsapp-y-mirar-las-pantallas">
+<h3>1. Abrir WhatsApp y mirar las pantallas<a class="headerlink" href="#abrir-whatsapp-y-mirar-las-pantallas" title="Link to this heading">#</a></h3>
+<p>Cuando abren WhatsApp, ven tres partes principales abajo (o arriba, según el celular):</p>
+<ul class="simple">
+<li><p><strong>Chats</strong> — la lista de todas las conversaciones.</p></li>
+<li><p><strong>Llamadas</strong> — el historial de llamadas y videollamadas.</p></li>
+<li><p><strong>Novedades</strong> o <strong>Estados</strong> — fotos y videos que la gente sube por 24 horas. <em>Por ahora lo ignoramos</em>.</p></li>
+</ul>
+<p><strong>Ejercicio mental:</strong> ¿Cuál de esas tres partes usan más?</p>
+<ul class="simple">
+<li><p>Si mandan mensajes → <strong>Chats</strong>.</p></li>
+<li><p>Si hacen videollamadas → <strong>Llamadas</strong>.</p></li>
+</ul>
+</section>
+<section id="mandar-un-mensaje-de-texto-repaso">
+<h3>2. Mandar un mensaje de texto (repaso)<a class="headerlink" href="#mandar-un-mensaje-de-texto-repaso" title="Link to this heading">#</a></h3>
+<p>Esto seguramente ya lo saben, pero lo repasamos:</p>
+<ol class="arabic simple">
+<li><p>Tocan <strong>Chats</strong>.</p></li>
+<li><p>Tocan el ícono de <strong>lápiz</strong> o de <strong>mensaje nuevo</strong> (arriba a la derecha).</p></li>
+<li><p>Eligen un contacto de la lista.</p></li>
+<li><p>Escriben el mensaje abajo.</p></li>
+<li><p>Tocan la <strong>flechita verde</strong> para enviar.</p></li>
+</ol>
+</section>
+<section id="mandar-una-nota-de-voz-esto-es-nuevo">
+<h3>3. Mandar una nota de voz 🎤 (esto es nuevo)<a class="headerlink" href="#mandar-una-nota-de-voz-esto-es-nuevo" title="Link to this heading">#</a></h3>
+<p>Las notas de voz son <strong>el truco más útil</strong> de WhatsApp para ustedes: no hace falta escribir, hablan y listo.</p>
+<p><strong>Paso a paso:</strong></p>
+<ol class="arabic simple">
+<li><p>Abren la conversación con la persona.</p></li>
+<li><p>Donde dice «Mensaje» abajo, a la derecha hay un <strong>dibujito de micrófono</strong> 🎙️.</p></li>
+<li><p><strong>Mantienen apretado el micrófono</strong> con el dedo (no lo suelten todavía).</p></li>
+<li><p><strong>Hablan</strong>: «Hola hijo, te llamo para…»</p></li>
+<li><p>Cuando terminaron, <strong>sueltan el dedo</strong>.</p></li>
+<li><p>La nota de voz se manda sola.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Si sueltan el dedo antes de terminar, la nota se manda incompleta. Tip: pueden <strong>deslizar el dedo hacia arriba sin soltarlo</strong> y aparece un candadito 🔒. Ahí ya pueden soltar y la grabación sigue. Para terminar, tocan el botón verde.</p>
+</div>
+<p><strong>Ejemplos de cuándo usar nota de voz:</strong></p>
+<ul class="simple">
+<li><p>Cuando es algo largo y da pereza escribir.</p></li>
+<li><p>Cuando no ven bien las letras chiquitas.</p></li>
+<li><p>Cuando quieren que la otra persona escuche el tono de voz (cariño, urgencia, etc.).</p></li>
+</ul>
+</section>
+<section id="hacer-una-videollamada">
+<h3>4. Hacer una videollamada 📹<a class="headerlink" href="#hacer-una-videollamada" title="Link to this heading">#</a></h3>
+<p>Esta es de las cosas más lindas: ver la cara de la otra persona, no solo escucharla.</p>
+<ol class="arabic simple">
+<li><p>Abren la conversación con la persona a la que quieren ver.</p></li>
+<li><p>Arriba a la derecha hay dos íconos:</p>
+<ul class="simple">
+<li><p>Un <strong>teléfono</strong> 📞 (llamada normal, solo voz).</p></li>
+<li><p>Una <strong>cámara</strong> 📷 (videollamada).</p></li>
+</ul>
+</li>
+<li><p>Tocan la <strong>cámara</strong> 📷.</p></li>
+<li><p>Esperan que la otra persona atienda.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Si están con poca luz, busquen una ventana o una lámpara. La otra persona los ve mejor si tienen luz <strong>en la cara</strong>, no atrás.</p>
+</div>
+<p><strong>Para colgar:</strong> un botón rojo redondo abajo del centro. Lo tocan y se corta.</p>
+</section>
+<section id="mandar-y-guardar-fotos">
+<h3>5. Mandar y guardar fotos 📸<a class="headerlink" href="#mandar-y-guardar-fotos" title="Link to this heading">#</a></h3>
+<p><strong>Para mandar una foto que ya tienen en el celular:</strong></p>
+<ol class="arabic simple">
+<li><p>Abren la conversación.</p></li>
+<li><p>Tocan el <strong>clip 📎</strong> o el <strong>+</strong> (al lado de donde escriben).</p></li>
+<li><p>Eligen <strong>Galería</strong> o <strong>Fotos</strong>.</p></li>
+<li><p>Tocan la foto que quieren mandar (pueden tocar varias).</p></li>
+<li><p>Tocan la <strong>flechita</strong> para mandar.</p></li>
+</ol>
+<p><strong>Para mandar una foto en el momento:</strong></p>
+<ol class="arabic simple">
+<li><p>Abren la conversación.</p></li>
+<li><p>Tocan el ícono de <strong>cámara</strong> 📷 que está al lado de donde escriben.</p></li>
+<li><p>Sacan la foto.</p></li>
+<li><p>Tocan la <strong>flechita verde</strong> para mandarla.</p></li>
+</ol>
+<p><strong>Para guardar una foto que les mandaron:</strong></p>
+<ol class="arabic simple">
+<li><p>Tocan la foto para verla grande.</p></li>
+<li><p>Tocan los <strong>tres puntitos</strong> arriba a la derecha.</p></li>
+<li><p>Eligen <strong>Guardar</strong> o <strong>Descargar</strong>.</p></li>
+<li><p>La foto queda en la galería del celular.</p></li>
+</ol>
+</section>
+<section id="crear-un-grupo-familiar">
+<h3>6. Crear un grupo familiar 👨‍👩‍👧‍👦<a class="headerlink" href="#crear-un-grupo-familiar" title="Link to this heading">#</a></h3>
+<p>Un grupo es una conversación donde están varias personas a la vez. Útil para «Familia», «Vecinos del edificio», etc.</p>
+<ol class="arabic simple">
+<li><p>En la pantalla de <strong>Chats</strong>, tocan los <strong>tres puntitos</strong> arriba a la derecha (Android) o <strong>Nuevo grupo</strong> (iPhone).</p></li>
+<li><p>Eligen <strong>Nuevo grupo</strong>.</p></li>
+<li><p>Tocan los contactos que quieren agregar (pueden agregar varios).</p></li>
+<li><p>Tocan la <strong>flechita verde</strong>.</p></li>
+<li><p>Le ponen un <strong>nombre</strong> al grupo: «Familia ❤️».</p></li>
+<li><p>Tocan <strong>Crear</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>En un grupo, todos ven todo. Si quieren mandarle algo solo a una persona, lo hacen en el chat directo con ella, no en el grupo.</p>
+</div>
+</section>
+<section id="compartir-la-ubicacion">
+<h3>7. Compartir la ubicación 📍<a class="headerlink" href="#compartir-la-ubicacion" title="Link to this heading">#</a></h3>
+<p>Útil si:</p>
+<ul class="simple">
+<li><p>Se pierden y alguien los quiere ir a buscar.</p></li>
+<li><p>Quieren mostrar dónde están.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Abren la conversación.</p></li>
+<li><p>Tocan el <strong>clip 📎</strong> o el <strong>+</strong>.</p></li>
+<li><p>Eligen <strong>Ubicación</strong>.</p></li>
+<li><p>Tocan <strong>Enviar mi ubicación actual</strong>.</p></li>
+</ol>
+<p>La otra persona recibe un mapa con un puntito donde están ustedes.</p>
+</section>
+</section>
+<section id="cuidado-con-las-estafas">
+<h2>⚠️ Cuidado con las estafas<a class="headerlink" href="#cuidado-con-las-estafas" title="Link to this heading">#</a></h2>
+<p>Esto es <strong>muy importante</strong>. Hay personas malas que usan WhatsApp para engañar a la gente, especialmente a personas mayores. Las estafas más comunes:</p>
+<p><strong>1. «Hola mamá, perdí mi celu, escribime a este número nuevo.»</strong></p>
+<p>Es un estafador haciéndose pasar por un hijo/nieto. Después pide plata urgente.</p>
+<p><strong>Qué hacer:</strong> Antes de mandarle nada, <strong>llamen al número viejo</strong> (el que ya tenían guardado) para confirmar. Si no atiende, llamen a otro familiar.</p>
+<p><strong>2. «Ganaste un premio, hacé clic acá.»</strong></p>
+<p>Es un link falso que les roba la cuenta de WhatsApp o el banco.</p>
+<p><strong>Qué hacer:</strong> <strong>No tocar ningún link</strong> que no esperaban. Si tienen dudas, me preguntan.</p>
+<p><strong>3. «Soy del banco, necesitamos confirmar tu cuenta, mandanos el código.»</strong></p>
+<p><strong>Los bancos NUNCA piden códigos por WhatsApp.</strong> Nunca.</p>
+<p><strong>Qué hacer:</strong> No mandar ningún código. Si dudan, llamen al banco al número que está en la tarjeta.</p>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p><strong>Regla de oro:</strong> Si algo les pide <strong>plata, contraseñas o códigos</strong> por WhatsApp, es estafa. Aunque parezca que escribe alguien conocido.</p>
+</div>
+</section>
+<section id="ejercicios-para-hacer-en-clase">
+<h2>Ejercicios para hacer en clase<a class="headerlink" href="#ejercicios-para-hacer-en-clase" title="Link to this heading">#</a></h2>
+<p>Vamos a practicar juntos, uno por uno:</p>
+<ol class="arabic simple">
+<li><p>✅ Mandarle una nota de voz a [persona elegida] diciendo «Estoy aprendiendo WhatsApp, qué orgullo».</p></li>
+<li><p>✅ Hacer una videollamada a [otra persona] y saludar 1 minuto.</p></li>
+<li><p>✅ Sacar una foto del lugar donde estamos y mandarla por el chat.</p></li>
+<li><p>✅ Compartir la ubicación actual.</p></li>
+<li><p>✅ Crear un grupo de prueba llamado «Curso de tecnología» con [dos contactos].</p></li>
+</ol>
+</section>
+<section id="tarea-para-la-semana">
+<h2>📝 Tarea para la semana<a class="headerlink" href="#tarea-para-la-semana" title="Link to this heading">#</a></h2>
+<p>Esta semana, <strong>cada día</strong> elijan una cosa de esta lista para hacer:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Lunes:</strong> Mandar una nota de voz a alguien.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Martes:</strong> Hacer una videollamada de al menos 5 minutos.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Miércoles:</strong> Mandar una foto que saquen ese día (la planta, el plato de comida, lo que sea).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Jueves:</strong> Mandar la ubicación a alguien (puede ser una prueba).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Viernes:</strong> Buscar una foto vieja en la galería y mandársela a un familiar con un mensaje de cariño.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Sábado:</strong> Mandar una nota de voz larga (más de 1 minuto) contando algo.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Domingo:</strong> Hacer una videollamada con varias personas (videollamada de grupo).</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Tachen cada cosa que vayan haciendo. La semana que viene me cuentan qué les costó más.</p>
+</div>
+</section>
+<section id="si-algo-sale-mal">
+<h2>Si algo sale mal<a class="headerlink" href="#si-algo-sale-mal" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt><strong>«Mandé un mensaje y dice una sola tilde gris.»</strong></dt><dd><p>Significa que el mensaje salió pero todavía no llegó al otro celular. Esperen un poco. Cuando llega, aparecen <strong>dos tildes grises</strong>. Cuando lo leen, <strong>dos tildes azules</strong>.</p>
+</dd>
+<dt><strong>«Apreté el micrófono y se mandó una nota vacía.»</strong></dt><dd><p>Soltaron el dedo demasiado rápido. Para borrarla: mantienen apretada la nota que mandaron → eligen <strong>Eliminar</strong> → <strong>Eliminar para todos</strong> (así desaparece también del otro lado). Tienen unos minutos para hacerlo.</p>
+</dd>
+<dt><strong>«No escucho nada en la videollamada.»</strong></dt><dd><p>Fíjense que el ícono de <strong>micrófono</strong> no esté tachado. Si está tachado (con una rayita), tóquenlo para activarlo.</p>
+</dd>
+<dt><strong>«La otra persona no me ve.»</strong></dt><dd><p>Mismo problema pero con la <strong>cámara</strong>. Busquen el ícono de cámara y toquen para activarla.</p>
+</dd>
+<dt><strong>«Me llegó un mensaje raro de un número desconocido.»</strong></dt><dd><p>No respondan. No toquen ningún link. Pueden <strong>bloquear el número</strong>: abren el chat → tocan el nombre o número arriba → bajan hasta <strong>Bloquear contacto</strong>.</p>
+</dd>
+<dt><strong>«Borré una conversación sin querer.»</strong></dt><dd><p>Si era una conversación larga, <strong>no se puede recuperar fácil</strong>. Por eso: si dudan, no borren nada. Para no borrar sin querer, eviten mantener apretado un chat a menos que sepan qué hace ese botón.</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>➡️ <strong>Próxima clase:</strong> <a class="reference internal" href="clase-2-meet.html"><span class="std std-doc">Google Meet</span></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="como-usar.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Cómo usar este curso</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="clase-2-meet.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Clase 2 — Google Meet</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-les-sirve">Para qué les sirve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-la-vida-real">Ejemplo de la vida real</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso">Paso a paso</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-whatsapp-y-mirar-las-pantallas">1. Abrir WhatsApp y mirar las pantallas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandar-un-mensaje-de-texto-repaso">2. Mandar un mensaje de texto (repaso)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandar-una-nota-de-voz-esto-es-nuevo">3. Mandar una nota de voz 🎤 (esto es nuevo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hacer-una-videollamada">4. Hacer una videollamada 📹</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandar-y-guardar-fotos">5. Mandar y guardar fotos 📸</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-grupo-familiar">6. Crear un grupo familiar 👨‍👩‍👧‍👦</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-la-ubicacion">7. Compartir la ubicación 📍</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuidado-con-las-estafas">⚠️ Cuidado con las estafas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Daniela
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

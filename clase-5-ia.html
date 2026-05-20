@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Clase 5 — Inteligencia Artificial (IA) &#8212; Curso de Tecnología</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=c2101671"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clase-5-ia';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Recursos y chuleta general" href="recursos.html" />
+    <link rel="prev" title="Clase 4 — Google Docs y Sheets" href="clase-4-docs-sheets.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Curso de Tecnología</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="como-usar.html">Cómo usar este curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-1-whatsapp.html">Clase 1 — WhatsApp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-2-meet.html">Clase 2 — Google Meet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-3-calendar.html">Clase 3 — Google Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-4-docs-sheets.html">Clase 4 — Google Docs y Sheets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clase 5 — Inteligencia Artificial (IA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursos.html">Recursos y chuleta general</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/clase-5-ia.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Clase 5 — Inteligencia Artificial (IA)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-esto-de-la-ia">¿Qué es esto de «la IA»?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-pueden-hacer-con-la-ia">¿Qué pueden hacer con la IA?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-mas-importante-antes-de-empezar">Lo más importante antes de empezar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso">Paso a paso</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrar-a-chatgpt-por-primera-vez">1. Entrar a ChatGPT por primera vez</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#en-la-computadora">En la computadora:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-celular">En el celular:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-primera-conversacion">2. La primera conversación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-preguntar-bien">3. Cómo «preguntar bien»</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-practicos-que-pueden-probar-hoy">4. Ejemplos prácticos que pueden probar HOY</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-seguir-una-conversacion">5. Cómo seguir una conversación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empezar-una-conversacion-nueva">6. Empezar una conversación nueva</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volver-a-una-conversacion-vieja">7. Volver a una conversación vieja</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escepticismo-sano-cuando-no-confiar-en-la-ia">Escepticismo sano: cuándo NO confiar en la IA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-terminar-el-curso">Para terminar el curso</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="clase-5-inteligencia-artificial-ia">
+<h1>Clase 5 — Inteligencia Artificial (IA)<a class="headerlink" href="#clase-5-inteligencia-artificial-ia" title="Link to this heading">#</a></h1>
+<p>⏱️ <strong>Duración:</strong> 1 hora
+📱💻 <strong>Dispositivo:</strong> computadora (más cómoda) o celular</p>
+<section id="que-es-esto-de-la-ia">
+<h2>¿Qué es esto de «la IA»?<a class="headerlink" href="#que-es-esto-de-la-ia" title="Link to this heading">#</a></h2>
+<p><strong>Inteligencia Artificial</strong> suena complicado, pero para ustedes es muy simple:</p>
+<blockquote>
+<div><p>Es un programa al que le pueden <strong>preguntar cualquier cosa</strong> y les responde como si fuera una persona que sabe mucho.</p>
+</div></blockquote>
+<p>Piénsenlo así: <strong>un asistente</strong> que está siempre disponible, no se cansa, no se enoja si le preguntan algo «tonto», y sabe de casi todo.</p>
+<p>Las más conocidas son <strong>ChatGPT</strong> y <strong>Claude</strong>. Las dos funcionan muy parecido. En esta clase vamos a usar <strong>ChatGPT</strong> porque es la más popular y la más fácil de conseguir.</p>
+<section id="que-pueden-hacer-con-la-ia">
+<h3>¿Qué pueden hacer con la IA?<a class="headerlink" href="#que-pueden-hacer-con-la-ia" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Preguntar cosas que no saben (recetas, cómo se hace algo, qué significa una palabra).</p></li>
+<li><p>Que les <strong>ayude a escribir</strong> un mail, una carta, un mensaje difícil.</p></li>
+<li><p>Pedir <strong>explicaciones simples</strong> de cosas complicadas (un análisis de sangre, una factura).</p></li>
+<li><p>Tener una <strong>conversación</strong> sobre cualquier tema (historia, libros, jardinería, lo que les guste).</p></li>
+<li><p>Que les <strong>ayude con la tecnología</strong> (»¿cómo hago para mandar un mail desde el celular?»).</p></li>
+</ul>
+</section>
+<section id="lo-mas-importante-antes-de-empezar">
+<h3>Lo más importante antes de empezar<a class="headerlink" href="#lo-mas-importante-antes-de-empezar" title="Link to this heading">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p><strong>La IA a veces se equivoca.</strong> Suena muy segura cuando habla, pero puede inventar cosas. <strong>Nunca tomen decisiones importantes</strong> (sobre salud, plata, trámites) solo en base a lo que dice la IA. Confirmen con un médico, un abogado, o quien corresponda.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p><strong>Nunca le den a la IA:</strong></p>
+<ul class="simple">
+<li><p>Su contraseña de nada.</p></li>
+<li><p>El número de tarjeta de crédito.</p></li>
+<li><p>El DNI completo.</p></li>
+<li><p>Datos íntimos que no le contarían a un desconocido.</p></li>
+</ul>
+</div>
+<p>La IA no es una persona pero piensen como si lo fuera: no le contarían a alguien que no conocen su número de tarjeta, ¿no?</p>
+</section>
+</section>
+<section id="antes-de-empezar">
+<h2>Antes de empezar<a class="headerlink" href="#antes-de-empezar" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Una computadora con <strong>Google Chrome</strong> (o el celular).</p></li>
+<li><p>Su <strong>mail de Gmail</strong> para crear la cuenta de ChatGPT.</p></li>
+</ul>
+</section>
+<section id="paso-a-paso">
+<h2>Paso a paso<a class="headerlink" href="#paso-a-paso" title="Link to this heading">#</a></h2>
+<section id="entrar-a-chatgpt-por-primera-vez">
+<h3>1. Entrar a ChatGPT por primera vez<a class="headerlink" href="#entrar-a-chatgpt-por-primera-vez" title="Link to this heading">#</a></h3>
+<section id="en-la-computadora">
+<h4>En la computadora:<a class="headerlink" href="#en-la-computadora" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Abren <strong>Chrome</strong>.</p></li>
+<li><p>Van a <strong>chat.openai.com</strong> (o <strong>chatgpt.com</strong>).</p></li>
+<li><p>Tocan <strong>Sign up</strong> (Registrarse) si es la primera vez, o <strong>Log in</strong> (Entrar) si ya tienen cuenta.</p></li>
+<li><p>Eligen <strong>Continuar con Google</strong> y eligen su mail de Gmail.</p></li>
+<li><p>¡Ya están adentro!</p></li>
+</ol>
+</section>
+<section id="en-el-celular">
+<h4>En el celular:<a class="headerlink" href="#en-el-celular" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>En la tienda de apps (Play Store o App Store), buscan <strong>ChatGPT</strong>.</p></li>
+<li><p>Instalan la app oficial (es de <strong>OpenAI</strong>, con un dibujito redondo negro o blanco como una flor).</p></li>
+<li><p>Abren la app y entran con su Gmail.</p></li>
+</ol>
+</section>
+</section>
+<section id="la-primera-conversacion">
+<h3>2. La primera conversación<a class="headerlink" href="#la-primera-conversacion" title="Link to this heading">#</a></h3>
+<p>Cuando entran, ven una pantalla casi vacía, con una caja abajo donde dice <strong>«Pregúntame lo que quieras»</strong> o <strong>«Mensaje»</strong>.</p>
+<p><strong>Su primera prueba:</strong></p>
+<ol class="arabic">
+<li><p>Escriben:</p>
+<blockquote>
+<div><p><em>«Hola, es la primera vez que uso ChatGPT. ¿Me podés contar qué cosas puedo hacer con vos?»</em></p>
+</div></blockquote>
+</li>
+<li><p>Aprietan <strong>Enter</strong> o tocan la flecha 📤.</p></li>
+<li><p>La IA empieza a escribir la respuesta sola, como si estuviera tipeando.</p></li>
+</ol>
+<p>¡Felicitaciones, ya están hablando con una IA! 🎉</p>
+</section>
+<section id="como-preguntar-bien">
+<h3>3. Cómo «preguntar bien»<a class="headerlink" href="#como-preguntar-bien" title="Link to this heading">#</a></h3>
+<p>La IA responde <strong>mejor</strong> si ustedes le dan más contexto. Comparen:</p>
+<p>❌ <strong>Pregunta corta:</strong> <em>«Receta de tarta.»</em></p>
+<p>✅ <strong>Pregunta con contexto:</strong> <em>«Quiero hacer una tarta de manzana para 6 personas. Tengo manzanas, harina, manteca, azúcar y huevos. ¿Me podés dar una receta sencilla, paso a paso?»</em></p>
+<p>Cuanto <strong>más le cuentan</strong>, mejor responde.</p>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p><strong>Truco:</strong> háblenle como le hablarían a un nieto que sabe mucho. Sin formalismos. <em>«Hola, mirá, tengo que escribir una carta a mi médico y no sé cómo arrancar. Es para pedirle un certificado. ¿Me ayudás?»</em></p>
+</div>
+</section>
+<section id="ejemplos-practicos-que-pueden-probar-hoy">
+<h3>4. Ejemplos prácticos que pueden probar HOY<a class="headerlink" href="#ejemplos-practicos-que-pueden-probar-hoy" title="Link to this heading">#</a></h3>
+<p>Estos son ejemplos pensados para ustedes. Cópienlos tal cual o cambien lo que quieran:</p>
+<p><strong>Ejemplo 1 — Receta con lo que tienen en la heladera:</strong></p>
+<blockquote>
+<div><p><em>«Tengo en la heladera: pollo, una cebolla, dos tomates, un morrón y arroz. ¿Qué puedo cocinar para dos personas? Algo simple, no tengo horno.»</em></p>
+</div></blockquote>
+<p><strong>Ejemplo 2 — Ayuda para escribir un mensaje difícil:</strong></p>
+<blockquote>
+<div><p><em>«Necesito escribirle un mensaje a mi hija para pedirle disculpas porque discutimos. ¿Me ayudás a armar algo cariñoso y honesto?»</em></p>
+</div></blockquote>
+<p><strong>Ejemplo 3 — Explicar algo médico (con cuidado):</strong></p>
+<blockquote>
+<div><p><em>«Mi médico me dijo que tengo el colesterol en 230. ¿Qué significa eso y qué cosas se recomiendan comer y no comer? (No te estoy pidiendo que me digas qué hacer, eso lo voy a consultar con el médico, solo quiero entender).»</em></p>
+</div></blockquote>
+<p><strong>Ejemplo 4 — Explicar una palabra o concepto:</strong></p>
+<blockquote>
+<div><p><em>«Mi nieto está hablando de “criptomonedas”. ¿Me podés explicar qué son, como si no supiera nada del tema?»</em></p>
+</div></blockquote>
+<p><strong>Ejemplo 5 — Resumir algo largo:</strong></p>
+<blockquote>
+<div><p><em>«Te paso el texto de un mail muy largo que me llegó. ¿Me lo podés resumir en 3 líneas para saber qué me están pidiendo? [pegan el texto del mail]»</em></p>
+</div></blockquote>
+<p><strong>Ejemplo 6 — Ideas para un regalo:</strong></p>
+<blockquote>
+<div><p><em>«Mi nieta cumple 8 años, le gusta dibujar y los animales. Tengo $20.000 para gastar. ¿Qué ideas de regalo me das?»</em></p>
+</div></blockquote>
+<p><strong>Ejemplo 7 — Ayuda con la tecnología:</strong></p>
+<blockquote>
+<div><p><em>«Tengo un celular Samsung Galaxy A20. ¿Cómo hago para silenciar las notificaciones a la noche?»</em></p>
+</div></blockquote>
+<p><strong>Ejemplo 8 — Conversación sobre algo que les interese:</strong></p>
+<blockquote>
+<div><p><em>«Me gusta mucho la historia argentina. ¿Me podés contar algo curioso sobre Buenos Aires en 1900 que poca gente sepa?»</em></p>
+</div></blockquote>
+</section>
+<section id="como-seguir-una-conversacion">
+<h3>5. Cómo seguir una conversación<a class="headerlink" href="#como-seguir-una-conversacion" title="Link to this heading">#</a></h3>
+<p>La IA <strong>se acuerda</strong> de lo que le dijeron antes en la misma conversación. O sea, no hace falta repetir todo.</p>
+<p><strong>Ejemplo de conversación con varias preguntas:</strong></p>
+<ol class="arabic simple">
+<li><p><em>«Quiero hacer una torta de chocolate.»</em></p></li>
+<li><p>La IA les da la receta.</p></li>
+<li><p><em>«No tengo cacao en polvo, ¿puedo usar chocolate común?»</em></p></li>
+<li><p>La IA les explica cómo reemplazar.</p></li>
+<li><p><em>«¿Y cuánto tiempo hay que dejarla en el horno?»</em></p></li>
+<li><p>La IA les dice el tiempo.</p></li>
+</ol>
+<p>Vean cómo cada pregunta es <strong>más corta</strong> porque la IA ya tiene contexto.</p>
+</section>
+<section id="empezar-una-conversacion-nueva">
+<h3>6. Empezar una conversación nueva<a class="headerlink" href="#empezar-una-conversacion-nueva" title="Link to this heading">#</a></h3>
+<p>Cuando cambian de tema (ya no quieren hablar de la torta sino de otra cosa), conviene <strong>empezar de cero</strong> para que no se confunda:</p>
+<ul class="simple">
+<li><p>En la compu: arriba a la izquierda dice <strong>«Nueva conversación»</strong> o <strong>«New chat»</strong>.</p></li>
+<li><p>En el celular: hay un botón con un <strong>+</strong> o un lápiz arriba.</p></li>
+</ul>
+<p>Tocan ahí y empieza una conversación nueva.</p>
+</section>
+<section id="volver-a-una-conversacion-vieja">
+<h3>7. Volver a una conversación vieja<a class="headerlink" href="#volver-a-una-conversacion-vieja" title="Link to this heading">#</a></h3>
+<p>Las conversaciones se guardan en una lista al costado.</p>
+<ul class="simple">
+<li><p>En la compu: a la izquierda ven todas las conversaciones. Hacen clic en una y la vuelven a abrir.</p></li>
+<li><p>En el celular: tocan las tres rayitas ☰ o el ícono de «Historial».</p></li>
+</ul>
+</section>
+</section>
+<section id="escepticismo-sano-cuando-no-confiar-en-la-ia">
+<h2>Escepticismo sano: cuándo NO confiar en la IA<a class="headerlink" href="#escepticismo-sano-cuando-no-confiar-en-la-ia" title="Link to this heading">#</a></h2>
+<p>Esto es <strong>muy importante</strong>.</p>
+<p>❌ <strong>No confíen ciegamente cuando:</strong></p>
+<ul class="simple">
+<li><p>Les da una <strong>dosis de remedio</strong>. Siempre confirmen con el médico o el farmacéutico.</p></li>
+<li><p>Les da <strong>información legal o de trámites</strong>. Las leyes cambian y la IA puede tener datos viejos.</p></li>
+<li><p>Les da <strong>información sobre plata o inversiones</strong>. Pueden perder dinero si le hacen caso a una IA sin confirmar.</p></li>
+<li><p>Les da <strong>noticias actuales</strong>. Muchas IA no saben qué pasó en los últimos meses.</p></li>
+<li><p>Habla con <strong>mucha seguridad</strong> de algo que les suena raro. Si suena raro, lo es.</p></li>
+</ul>
+<p>✅ <strong>Pueden confiar más cuando:</strong></p>
+<ul class="simple">
+<li><p>Es algo de <strong>conocimiento general</strong> que pueden verificar (qué es una palabra, una receta, un dato histórico).</p></li>
+<li><p>Es algo <strong>creativo</strong> (ayuda a escribir, ideas de regalo).</p></li>
+<li><p>Es algo de <strong>conversación</strong> (ideas, opiniones, charla).</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p><strong>Verifiquen</strong> lo que les diga la IA con otra fuente cuando se trate de algo importante: una segunda búsqueda en Google, un familiar, un profesional.</p>
+</div>
+</section>
+<section id="ejercicios-para-hacer-en-clase">
+<h2>Ejercicios para hacer en clase<a class="headerlink" href="#ejercicios-para-hacer-en-clase" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>✅ Entrar a ChatGPT y hacerle una pregunta de presentación.</p></li>
+<li><p>✅ Pedirle una receta con ingredientes que tengamos a mano.</p></li>
+<li><p>✅ Pedirle ayuda para escribir un mensaje a alguien.</p></li>
+<li><p>✅ Preguntarle algo de su vida (un tema que les interese: jardinería, historia, deportes).</p></li>
+<li><p>✅ Pedirle que les explique algo difícil «como si no supiéramos nada del tema».</p></li>
+<li><p>✅ Empezar una conversación nueva.</p></li>
+<li><p>✅ Volver a una conversación anterior.</p></li>
+</ol>
+</section>
+<section id="tarea-para-la-semana">
+<h2>📝 Tarea para la semana<a class="headerlink" href="#tarea-para-la-semana" title="Link to this heading">#</a></h2>
+<p>Durante esta semana, <strong>usen la IA al menos una vez por día</strong> para algo de su vida real:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Lunes:</strong> Una receta con lo que tienen en la heladera.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Martes:</strong> Pedirle ayuda para escribir algo (un mail, un mensaje, una carta).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Miércoles:</strong> Preguntarle algo que siempre tuvieron curiosidad de saber.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Jueves:</strong> Pedirle un resumen de algo (de un mail largo, de una noticia).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Viernes:</strong> Charlar con la IA 10 minutos sobre un tema que les guste.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Sábado:</strong> Pedirle una idea de regalo o de plan para el fin de semana.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Domingo:</strong> Mostrarle a otro familiar lo que aprendieron.</p></li>
+</ul>
+<p>Después me cuentan qué les resultó más útil y dónde se dieron cuenta de que se equivocó.</p>
+</section>
+<section id="si-algo-sale-mal">
+<h2>Si algo sale mal<a class="headerlink" href="#si-algo-sale-mal" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt><strong>«Me pide que pague.»</strong></dt><dd><p>ChatGPT tiene una versión gratis y una paga. <strong>La gratis alcanza y sobra para ustedes</strong>. Si les sale un cartel ofreciendo pagar, busquen un botón pequeño que diga «Más tarde», «Continuar con la versión gratuita» o una <strong>X</strong> arriba para cerrar.</p>
+</dd>
+<dt><strong>«La respuesta se cortó por la mitad.»</strong></dt><dd><p>Escriban <strong>«Continuá»</strong> o <strong>«Seguí»</strong> y la IA termina lo que estaba diciendo.</p>
+</dd>
+<dt><strong>«No entendí la respuesta.»</strong></dt><dd><p>Pueden decirle: <em>«No entendí. ¿Me lo explicás más simple, como si tuviera 10 años?»</em>. La IA va a reformular más fácil.</p>
+</dd>
+<dt><strong>«Me dijo algo que sé que está mal.»</strong></dt><dd><p>Díganle: <em>«Eso no es correcto, en realidad es así: […]»</em>. La IA se corrige. Pero ojo: que se corrija no quiere decir que la <strong>siguiente</strong> respuesta esté bien. Sigan verificando.</p>
+</dd>
+<dt><strong>«Tengo miedo de meter la pata.»</strong></dt><dd><p>La IA <strong>no rompe nada</strong>. No le pasa nada al celular ni a la compu por hablar con ella. Hagan todas las pruebas que quieran.</p>
+</dd>
+<dt><strong>«Le pregunté algo personal y ahora pienso si guarda mis datos.»</strong></dt><dd><p>Sí, las conversaciones quedan guardadas en su cuenta. Por eso: <strong>no le den datos súper sensibles</strong> (contraseñas, números de tarjeta). Pero contarle un problema personal o pedir consejo es seguro.</p>
+</dd>
+</dl>
+</section>
+<section id="para-terminar-el-curso">
+<h2>Para terminar el curso<a class="headerlink" href="#para-terminar-el-curso" title="Link to this heading">#</a></h2>
+<p>¡Felicitaciones! 🎉 Llegaron al final.</p>
+<p>Lo más importante que se llevan no son las apps. Es <strong>la confianza</strong> para probar, equivocarse, y volver a intentar.</p>
+<p><strong>Mis consejos finales:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Practiquen poco pero seguido.</strong> Mejor 10 minutos por día que 2 horas un sábado.</p></li>
+<li><p><strong>Anoten</strong> lo que aprenden en un cuaderno. Vuelvan a leer esas notas cuando se trabe algo.</p></li>
+<li><p><strong>Pregunten sin vergüenza.</strong> A mí, a un nieto, a la IA. No hay preguntas tontas.</p></li>
+<li><p><strong>Recuerden la regla de oro:</strong> si algo en la pantalla les pide plata, contraseñas o códigos, <strong>no toquen nada</strong>. Pregúntenme primero.</p></li>
+<li><p><strong>Diviértanse.</strong> La tecnología es para hacerles la vida más fácil, no más complicada. Si una herramienta los estresa, déjenla y vuelvan otro día.</p></li>
+</ol>
+<p>➡️ Vayan a la página de <a class="reference internal" href="recursos.html"><span class="std std-doc">Recursos</span></a> para ver una <strong>chuleta</strong> con todo lo importante en una sola página.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="clase-4-docs-sheets.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Clase 4 — Google Docs y Sheets</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="recursos.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Recursos y chuleta general</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-esto-de-la-ia">¿Qué es esto de «la IA»?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-pueden-hacer-con-la-ia">¿Qué pueden hacer con la IA?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-mas-importante-antes-de-empezar">Lo más importante antes de empezar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso">Paso a paso</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrar-a-chatgpt-por-primera-vez">1. Entrar a ChatGPT por primera vez</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#en-la-computadora">En la computadora:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-celular">En el celular:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-primera-conversacion">2. La primera conversación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-preguntar-bien">3. Cómo «preguntar bien»</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-practicos-que-pueden-probar-hoy">4. Ejemplos prácticos que pueden probar HOY</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-seguir-una-conversacion">5. Cómo seguir una conversación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empezar-una-conversacion-nueva">6. Empezar una conversación nueva</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volver-a-una-conversacion-vieja">7. Volver a una conversación vieja</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escepticismo-sano-cuando-no-confiar-en-la-ia">Escepticismo sano: cuándo NO confiar en la IA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-terminar-el-curso">Para terminar el curso</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Daniela
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

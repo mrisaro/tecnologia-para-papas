@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Clase 3 — Google Calendar &#8212; Curso de Tecnología</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=c2101671"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clase-3-calendar';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Clase 4 — Google Docs y Sheets" href="clase-4-docs-sheets.html" />
+    <link rel="prev" title="Clase 2 — Google Meet" href="clase-2-meet.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Curso de Tecnología</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="como-usar.html">Cómo usar este curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-1-whatsapp.html">Clase 1 — WhatsApp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-2-meet.html">Clase 2 — Google Meet</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clase 3 — Google Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-4-docs-sheets.html">Clase 4 — Google Docs y Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-5-ia.html">Clase 5 — Inteligencia Artificial (IA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursos.html">Recursos y chuleta general</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/clase-3-calendar.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Clase 3 — Google Calendar</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-les-sirve">Para qué les sirve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-la-vida-real">Ejemplos de la vida real</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso">Paso a paso</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-calendar-y-entender-lo-que-ven">1. Abrir Calendar y entender lo que ven</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-evento-lo-mas-importante">2. Crear un evento (lo más importante)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desde-el-celular">Desde el celular:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desde-la-computadora">Desde la computadora:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eventos-que-se-repiten">3. Eventos que se repiten 🔁</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editar-o-borrar-un-evento">4. Editar o borrar un evento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-un-evento-con-la-familia">5. Compartir un evento con la familia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activar-las-notificaciones-del-celular">6. Activar las notificaciones del celular</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="clase-3-google-calendar">
+<h1>Clase 3 — Google Calendar<a class="headerlink" href="#clase-3-google-calendar" title="Link to this heading">#</a></h1>
+<p>⏱️ <strong>Duración:</strong> 1 hora
+📱💻 <strong>Dispositivo:</strong> celular y computadora</p>
+<section id="para-que-les-sirve">
+<h2>Para qué les sirve<a class="headerlink" href="#para-que-les-sirve" title="Link to this heading">#</a></h2>
+<p><strong>Google Calendar</strong> es una <strong>agenda</strong> que tienen en el celular y en la computadora al mismo tiempo. Lo que anotan en uno, aparece en el otro.</p>
+<p>Lo más útil:</p>
+<ul class="simple">
+<li><p><strong>Les avisa antes</strong> de los turnos (con un cartelito o un pitido).</p></li>
+<li><p><strong>No se pierde</strong> (no como una agenda de papel que se puede olvidar en algún lado).</p></li>
+<li><p><strong>Cumpleaños que se repiten todos los años</strong> sin tener que anotarlos de nuevo.</p></li>
+<li><p><strong>Compartir un evento</strong> con la familia.</p></li>
+<li><p><strong>Ver el mes entero</strong> de un vistazo.</p></li>
+</ul>
+<section id="ejemplos-de-la-vida-real">
+<h3>Ejemplos de la vida real<a class="headerlink" href="#ejemplos-de-la-vida-real" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>«El cardiólogo el jueves 4 a las 15:30»</em> → lo anotan una vez y el celular les avisa el día anterior + 1 hora antes.</p></li>
+<li><p><em>«Control con el oftalmólogo cada 6 meses»</em> → lo ponen una vez y se repite solo.</p></li>
+<li><p><em>«Cumpleaños de mi nieta Sofía, 12 de marzo»</em> → lo ponen una vez y se repite todos los años. Nunca más se lo van a olvidar.</p></li>
+<li><p><em>«Tomar la pastilla a las 9 y a las 21»</em> → recordatorio diario.</p></li>
+<li><p><em>«Pagar el alquiler el día 5 de cada mes»</em> → recordatorio mensual.</p></li>
+</ul>
+</section>
+</section>
+<section id="antes-de-empezar">
+<h2>Antes de empezar<a class="headerlink" href="#antes-de-empezar" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Tener una cuenta de <strong>Gmail</strong> (ya la tienen de la clase anterior).</p></li>
+<li><p>En el celular: tener la app <strong>Google Calendar</strong> instalada (ícono de un cuadrado celeste con el número del día).</p></li>
+<li><p>En la computadora: usar <strong>Google Chrome</strong>, ir a <strong>calendar.google.com</strong>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Algunos celulares vienen con una app de calendario propia (Samsung Calendar, Apple Calendario, etc.). Funciona parecido, pero nosotras vamos a usar <strong>Google Calendar</strong> porque se sincroniza con la computadora.</p>
+</div>
+</section>
+<section id="paso-a-paso">
+<h2>Paso a paso<a class="headerlink" href="#paso-a-paso" title="Link to this heading">#</a></h2>
+<section id="abrir-calendar-y-entender-lo-que-ven">
+<h3>1. Abrir Calendar y entender lo que ven<a class="headerlink" href="#abrir-calendar-y-entender-lo-que-ven" title="Link to this heading">#</a></h3>
+<p>Cuando abren Google Calendar, ven el <strong>mes actual</strong> o <strong>la semana actual</strong>, con los días en cuadraditos.</p>
+<p><strong>Cosas básicas para ubicarse:</strong></p>
+<ul class="simple">
+<li><p>El día de <strong>hoy</strong> está marcado con un círculo o un color diferente.</p></li>
+<li><p>Si toquetean para los lados o para arriba, se mueven entre semanas/meses.</p></li>
+<li><p>Arriba a la izquierda hay un botón con tres rayitas ☰ o el nombre del mes — ahí pueden <strong>cambiar la vista</strong>: Día, Semana, Mes.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Para empezar, les recomiendo la vista <strong>Semana</strong> o <strong>Mes</strong>. La vista Día sirve cuando tienen mucho lleno y quieren ver con detalle.</p>
+</div>
+</section>
+<section id="crear-un-evento-lo-mas-importante">
+<h3>2. Crear un evento (lo más importante)<a class="headerlink" href="#crear-un-evento-lo-mas-importante" title="Link to this heading">#</a></h3>
+<p><strong>Ejemplo:</strong> anotar un turno con el doctor el próximo jueves a las 15:30.</p>
+<section id="desde-el-celular">
+<h4>Desde el celular:<a class="headerlink" href="#desde-el-celular" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Tocan el <strong>+</strong> abajo a la derecha.</p></li>
+<li><p>Eligen <strong>Evento</strong>.</p></li>
+<li><p>Escriben el <strong>título</strong>: «Turno cardiólogo Dr. Pérez».</p></li>
+<li><p>Eligen el <strong>día</strong>: jueves de la semana que viene.</p></li>
+<li><p>Eligen la <strong>hora de inicio</strong>: 15:30.</p></li>
+<li><p>Eligen la <strong>hora de fin</strong>: 16:30 (más o menos cuánto va a durar).</p></li>
+<li><p>(Opcional) En <strong>Ubicación</strong> escriben la dirección del consultorio: «Av. Santa Fe 1234».</p></li>
+<li><p>(Opcional) En <strong>Descripción</strong> anotan: «Llevar carnet de obra social y el último análisis».</p></li>
+<li><p><strong>Recordatorio</strong>: por defecto les avisa 10 minutos antes. Pueden agregar más:</p>
+<ul class="simple">
+<li><p>Tocan <strong>Agregar notificación</strong>.</p></li>
+<li><p>Eligen <strong>1 día antes</strong> y <strong>1 hora antes</strong>, por ejemplo.</p></li>
+</ul>
+</li>
+<li><p>Tocan <strong>Guardar</strong>.</p></li>
+</ol>
+<p>¡Listo! Cuando llegue el momento, el celular les va a avisar.</p>
+</section>
+<section id="desde-la-computadora">
+<h4>Desde la computadora:<a class="headerlink" href="#desde-la-computadora" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Van a <strong>calendar.google.com</strong>.</p></li>
+<li><p>Tocan el botón <strong>Crear</strong> arriba a la izquierda → <strong>Evento</strong>.</p></li>
+<li><p>Escriben el título.</p></li>
+<li><p>Eligen día y hora.</p></li>
+<li><p>(Opcional) Ubicación, descripción, recordatorios.</p></li>
+<li><p>Tocan <strong>Guardar</strong>.</p></li>
+</ol>
+</section>
+</section>
+<section id="eventos-que-se-repiten">
+<h3>3. Eventos que se repiten 🔁<a class="headerlink" href="#eventos-que-se-repiten" title="Link to this heading">#</a></h3>
+<p>Esto es <strong>mágico</strong>: pongan algo una sola vez y se repite solo.</p>
+<p><strong>Ejemplo: cumpleaños de la nieta el 12 de marzo (todos los años).</strong></p>
+<ol class="arabic simple">
+<li><p>Crean el evento como en el punto 2.</p></li>
+<li><p>Antes de guardar, buscan la opción <strong>Repetir</strong> o <strong>No se repite</strong>.</p></li>
+<li><p>Tocan ahí y eligen:</p>
+<ul class="simple">
+<li><p><strong>No se repite</strong> (por defecto).</p></li>
+<li><p><strong>Todos los días</strong>.</p></li>
+<li><p><strong>Todas las semanas el martes</strong> (o el día que sea).</p></li>
+<li><p><strong>Todos los meses el 12</strong>.</p></li>
+<li><p><strong>Todos los años el 12 de marzo</strong>. ← Esta es la que queremos para un cumpleaños.</p></li>
+</ul>
+</li>
+<li><p>Guardan.</p></li>
+</ol>
+<p><strong>Ideas para usar la repetición:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Evento</p></th>
+<th class="head"><p>Repetición</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pastilla de la mañana</p></td>
+<td><p>Todos los días a las 9:00</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pastilla de la noche</p></td>
+<td><p>Todos los días a las 21:00</p></td>
+</tr>
+<tr class="row-even"><td><p>Cumpleaños</p></td>
+<td><p>Todos los años en esa fecha</p></td>
+</tr>
+<tr class="row-odd"><td><p>Control médico</p></td>
+<td><p>Cada 6 meses</p></td>
+</tr>
+<tr class="row-even"><td><p>Pagar alquiler</p></td>
+<td><p>Todos los meses el día 5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cobrar jubilación</p></td>
+<td><p>Todos los meses el día X</p></td>
+</tr>
+<tr class="row-even"><td><p>Llamar a la hermana</p></td>
+<td><p>Todos los domingos a las 11:00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="editar-o-borrar-un-evento">
+<h3>4. Editar o borrar un evento<a class="headerlink" href="#editar-o-borrar-un-evento" title="Link to this heading">#</a></h3>
+<p><strong>Editar:</strong></p>
+<ol class="arabic simple">
+<li><p>Tocan el evento en el calendario.</p></li>
+<li><p>Tocan el <strong>lapicito</strong> ✏️ (Editar).</p></li>
+<li><p>Cambian lo que quieran.</p></li>
+<li><p>Guardan.</p></li>
+</ol>
+<p><strong>Borrar:</strong></p>
+<ol class="arabic simple">
+<li><p>Tocan el evento.</p></li>
+<li><p>Tocan los <strong>tres puntitos</strong> o <strong>el tacho de basura</strong> 🗑️.</p></li>
+<li><p>Confirman.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Si el evento se repite y lo borran, les va a preguntar si quieren borrar <strong>solo este</strong> o <strong>todos los repetidos</strong>. ¡Léanlo bien antes de decidir!</p>
+</div>
+</section>
+<section id="compartir-un-evento-con-la-familia">
+<h3>5. Compartir un evento con la familia<a class="headerlink" href="#compartir-un-evento-con-la-familia" title="Link to this heading">#</a></h3>
+<p>Por ejemplo, quieren invitar a la familia a un asado el sábado.</p>
+<ol class="arabic simple">
+<li><p>Crean el evento «Asado en casa».</p></li>
+<li><p>En <strong>Invitados</strong> o <strong>Agregar personas</strong>, ponen los mails de quien quieran invitar.</p></li>
+<li><p>Guardan.</p></li>
+<li><p>Les llega un mail a cada uno con el evento. Si dicen «Sí», aparece automáticamente en sus propias agendas.</p></li>
+</ol>
+</section>
+<section id="activar-las-notificaciones-del-celular">
+<h3>6. Activar las notificaciones del celular<a class="headerlink" href="#activar-las-notificaciones-del-celular" title="Link to this heading">#</a></h3>
+<p>Para que el celular <strong>pite</strong> o <strong>muestre un cartel</strong> cuando se acerca un evento:</p>
+<p><strong>En Android:</strong></p>
+<ol class="arabic simple">
+<li><p>Vayan a <strong>Ajustes</strong> del celular (la ruedita ⚙️).</p></li>
+<li><p>Busquen <strong>Aplicaciones</strong> o <strong>Apps</strong>.</p></li>
+<li><p>Busquen <strong>Calendario</strong> o <strong>Google Calendar</strong>.</p></li>
+<li><p>Toquen <strong>Notificaciones</strong>.</p></li>
+<li><p>Asegúrense de que esté <strong>activado</strong>.</p></li>
+</ol>
+<p><strong>En iPhone:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Ajustes</strong> ⚙️ → <strong>Notificaciones</strong> → <strong>Calendario</strong> → <strong>Permitir notificaciones</strong>: SÍ.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Si no les llegan las notificaciones, casi siempre es esto: las notificaciones están apagadas. Esto se hace <strong>una sola vez</strong> y queda.</p>
+</div>
+</section>
+</section>
+<section id="ejercicios-para-hacer-en-clase">
+<h2>Ejercicios para hacer en clase<a class="headerlink" href="#ejercicios-para-hacer-en-clase" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>✅ Crear un evento para mañana llamado «Curso de tecnología práctica».</p></li>
+<li><p>✅ Crear un cumpleaños que se repita todos los años.</p></li>
+<li><p>✅ Crear un recordatorio diario para «Tomar la pastilla a las 9».</p></li>
+<li><p>✅ Agregar dos notificaciones a un evento (1 día antes y 1 hora antes).</p></li>
+<li><p>✅ Editar el título de un evento.</p></li>
+<li><p>✅ Borrar un evento de prueba.</p></li>
+<li><p>✅ Compartir un evento con mi mail (Daniela).</p></li>
+<li><p>✅ Cambiar la vista de Mes → Semana → Día y volver.</p></li>
+</ol>
+</section>
+<section id="tarea-para-la-semana">
+<h2>📝 Tarea para la semana<a class="headerlink" href="#tarea-para-la-semana" title="Link to this heading">#</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Anotar todos los turnos médicos</strong> que tengan en los próximos 3 meses (busquen los papelitos, recetas, lo que tengan a mano).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Anotar los cumpleaños</strong> importantes de toda la familia con repetición anual.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Crear 1 recordatorio diario</strong> que les sirva (pastilla, llamar a alguien, regar las plantas).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Crear 1 recordatorio mensual</strong> (pagar el alquiler, cobrar la jubilación, lo que sea).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Compartirme un evento</strong> (cualquier evento) para que practiquen el botón de invitar.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p><strong>El truco para que les sirva:</strong> cada vez que les digan un turno, una fecha, una hora — <strong>anótenla en Calendar enseguida</strong>, antes de cortar el teléfono. Si la dejan para después, se olvidan.</p>
+</div>
+</section>
+<section id="si-algo-sale-mal">
+<h2>Si algo sale mal<a class="headerlink" href="#si-algo-sale-mal" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt><strong>«No me suena la notificación.»</strong></dt><dd><p>Las notificaciones del celular están apagadas. Vean el paso 6.</p>
+</dd>
+<dt><strong>«Lo anoté en el celular pero no aparece en la compu (o al revés).»</strong></dt><dd><p>Fíjense que en los dos lados estén entrando con <strong>el mismo mail de Gmail</strong>. Si en el celular están con un Gmail y en la compu con otro, los eventos no se cruzan.</p>
+</dd>
+<dt><strong>«Borré un evento sin querer.»</strong></dt><dd><p>Google Calendar tiene <strong>papelera</strong> (basurero):</p>
+<ul class="simple">
+<li><p>En la compu: en <strong>Ajustes</strong> → <strong>Papelera</strong>, pueden recuperar eventos borrados de los últimos 30 días.</p></li>
+<li><p>En el celular: tocan las tres rayitas ☰ → <strong>Papelera</strong>.</p></li>
+</ul>
+</dd>
+<dt><strong>«El recordatorio me suena demasiado tarde.»</strong></dt><dd><p>Editen el evento y cambien la notificación a «1 hora antes» o «1 día antes». Pueden poner varias notificaciones al mismo evento.</p>
+</dd>
+<dt><strong>«Veo eventos raros que yo no puse.»</strong></dt><dd><p>Puede ser que algún calendario adicional esté activo (cumpleaños de contactos, días festivos). En <strong>Ajustes</strong> → <strong>Mis calendarios</strong> pueden apagar los que no quieran ver.</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>➡️ <strong>Próxima clase:</strong> <a class="reference internal" href="clase-4-docs-sheets.html"><span class="std std-doc">Google Docs y Sheets</span></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="clase-2-meet.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Clase 2 — Google Meet</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="clase-4-docs-sheets.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Clase 4 — Google Docs y Sheets</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-les-sirve">Para qué les sirve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-la-vida-real">Ejemplos de la vida real</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso">Paso a paso</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-calendar-y-entender-lo-que-ven">1. Abrir Calendar y entender lo que ven</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-evento-lo-mas-importante">2. Crear un evento (lo más importante)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desde-el-celular">Desde el celular:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desde-la-computadora">Desde la computadora:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eventos-que-se-repiten">3. Eventos que se repiten 🔁</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editar-o-borrar-un-evento">4. Editar o borrar un evento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-un-evento-con-la-familia">5. Compartir un evento con la familia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activar-las-notificaciones-del-celular">6. Activar las notificaciones del celular</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Daniela
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

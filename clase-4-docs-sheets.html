@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Clase 4 — Google Docs y Sheets &#8212; Curso de Tecnología</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=c2101671"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clase-4-docs-sheets';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Clase 5 — Inteligencia Artificial (IA)" href="clase-5-ia.html" />
+    <link rel="prev" title="Clase 3 — Google Calendar" href="clase-3-calendar.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Curso de Tecnología</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="como-usar.html">Cómo usar este curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-1-whatsapp.html">Clase 1 — WhatsApp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-2-meet.html">Clase 2 — Google Meet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-3-calendar.html">Clase 3 — Google Calendar</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clase 4 — Google Docs y Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-5-ia.html">Clase 5 — Inteligencia Artificial (IA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursos.html">Recursos y chuleta general</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/clase-4-docs-sheets.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Clase 4 — Google Docs y Sheets</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-les-sirve">Para qué les sirve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-la-vida-real">Ejemplos de la vida real</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1-google-docs">Parte 1 — Google Docs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-documento-nuevo">1. Crear un documento nuevo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escribir-y-darle-formato">2. Escribir y darle formato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ponerle-nombre-al-documento">3. Ponerle nombre al documento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-hay-que-guardar-se-guarda-solo">4. No hay que guardar (se guarda solo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encontrar-un-documento-viejo">5. Encontrar un documento viejo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-un-documento">6. Compartir un documento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imprimir">7. Imprimir</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-2-google-sheets-version-muy-basica">Parte 2 — Google Sheets (versión muy básica)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-planilla">1. Crear una planilla</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hacer-una-lista-de-gastos">2. Hacer una lista de gastos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumar-una-columna-el-truco-magico">3. Sumar una columna (el truco mágico)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ponerle-nombre-y-compartir">4. Ponerle nombre y compartir</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="clase-4-google-docs-y-sheets">
+<h1>Clase 4 — Google Docs y Sheets<a class="headerlink" href="#clase-4-google-docs-y-sheets" title="Link to this heading">#</a></h1>
+<p>⏱️ <strong>Duración:</strong> 1 hora
+💻📱 <strong>Dispositivo:</strong> computadora (principal) y celular (para ver)</p>
+<section id="para-que-les-sirve">
+<h2>Para qué les sirve<a class="headerlink" href="#para-que-les-sirve" title="Link to this heading">#</a></h2>
+<p>Esta clase tiene <strong>dos partes</strong> porque son dos herramientas hermanas:</p>
+<ul class="simple">
+<li><p><strong>Google Docs</strong> = una <strong>hoja de Word</strong> para escribir textos (cartas, listas, notas).</p></li>
+<li><p><strong>Google Sheets</strong> = una <strong>planilla</strong> con casilleros para hacer cuentas (gastos, listas de cosas con datos).</p></li>
+</ul>
+<p>Las dos viven en internet, así que:</p>
+<ul class="simple">
+<li><p><strong>Lo que escriben se guarda solo</strong> (no hay que apretar «guardar» cada dos minutos).</p></li>
+<li><p><strong>Lo pueden ver desde cualquier lado</strong>: la compu, el celular, la compu de un nieto.</p></li>
+<li><p><strong>No se pierde</strong> aunque se rompa la computadora.</p></li>
+<li><p><strong>Lo pueden compartir</strong> con la familia para que todos vean lo mismo.</p></li>
+</ul>
+<section id="ejemplos-de-la-vida-real">
+<h3>Ejemplos de la vida real<a class="headerlink" href="#ejemplos-de-la-vida-real" title="Link to this heading">#</a></h3>
+<p><strong>Con Docs:</strong></p>
+<ul class="simple">
+<li><p>Una <strong>carta</strong> para la administración del edificio.</p></li>
+<li><p>Una <strong>lista de compras</strong> del mes.</p></li>
+<li><p><strong>Notas</strong> del médico (síntomas, lo que dijo el doctor).</p></li>
+<li><p>Un <strong>listado de remedios</strong> con horarios.</p></li>
+<li><p>La <strong>receta de la abuela</strong> para que no se pierda.</p></li>
+</ul>
+<p><strong>Con Sheets:</strong></p>
+<ul class="simple">
+<li><p>Los <strong>gastos del mes</strong> (qué se gastó, en qué).</p></li>
+<li><p><strong>Lista de cumpleaños</strong> de toda la familia con fechas y edades.</p></li>
+<li><p>Control de <strong>pagos</strong> (qué se pagó, qué falta).</p></li>
+<li><p><strong>Inventario</strong> de algo (libros que prestan, herramientas).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p><strong>Sean honestos consigo mismos:</strong> Sheets es la herramienta más «técnica» del curso. Si no le ven uso concreto, no se preocupen — con saber <strong>abrir un documento que les comparten y leerlo</strong> ya alcanza para el día a día. Concéntrense en Docs.</p>
+</div>
+</section>
+</section>
+<section id="antes-de-empezar">
+<h2>Antes de empezar<a class="headerlink" href="#antes-de-empezar" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Tener Gmail (ya lo tienen).</p></li>
+<li><p>Computadora con <strong>Google Chrome</strong>.</p></li>
+<li><p>En la compu, van a usar:</p>
+<ul>
+<li><p><strong>docs.google.com</strong> para Docs.</p></li>
+<li><p><strong>sheets.google.com</strong> para Sheets.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="parte-1-google-docs">
+<h2>Parte 1 — Google Docs<a class="headerlink" href="#parte-1-google-docs" title="Link to this heading">#</a></h2>
+<section id="crear-un-documento-nuevo">
+<h3>1. Crear un documento nuevo<a class="headerlink" href="#crear-un-documento-nuevo" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Abren <strong>Chrome</strong>.</p></li>
+<li><p>Van a <strong>docs.google.com</strong>.</p></li>
+<li><p>Si les pide entrar, ponen su Gmail.</p></li>
+<li><p>Arriba ven un cuadrado de colores con un <strong>+</strong> que dice <strong>En blanco</strong> o <strong>Documento en blanco</strong>. Tóquenlo.</p></li>
+<li><p>Se abre un documento vacío, parecido a una hoja de papel blanca.</p></li>
+</ol>
+</section>
+<section id="escribir-y-darle-formato">
+<h3>2. Escribir y darle formato<a class="headerlink" href="#escribir-y-darle-formato" title="Link to this heading">#</a></h3>
+<p>Escriban lo que quieran. Vamos a hacer una <strong>carta</strong> como ejemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Buenos</span> <span class="n">Aires</span><span class="p">,</span> <span class="mi">20</span> <span class="n">de</span> <span class="n">mayo</span> <span class="n">de</span> <span class="mi">2026</span>
+
+<span class="n">Estimados</span> <span class="n">vecinos</span><span class="p">:</span>
+
+<span class="n">Quería</span> <span class="n">avisarles</span> <span class="n">que</span> <span class="n">el</span> <span class="n">sábado</span> <span class="mi">28</span> <span class="n">vamos</span> <span class="n">a</span> <span class="n">tener</span> <span class="n">una</span> <span class="n">reunión</span>
+<span class="k">del</span> <span class="n">consorcio</span> <span class="n">en</span> <span class="n">el</span> <span class="n">SUM</span> <span class="k">del</span> <span class="n">edificio</span><span class="p">,</span> <span class="n">a</span> <span class="n">las</span> <span class="mi">18</span> <span class="n">horas</span><span class="o">.</span>
+
+<span class="n">Los</span> <span class="n">temas</span> <span class="n">a</span> <span class="n">tratar</span> <span class="n">son</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Renovación</span> <span class="k">del</span> <span class="n">ascensor</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">Pintura</span> <span class="k">del</span> <span class="n">frente</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">Limpieza</span> <span class="n">general</span><span class="o">.</span>
+
+<span class="n">Saludos</span> <span class="n">cordiales</span><span class="p">,</span>
+<span class="p">[</span><span class="n">Nombre</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Arriba del documento tienen una <strong>barra de herramientas</strong> con:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Botón</p></th>
+<th class="head"><p>Para qué sirve</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>N</strong></p></td>
+<td><p>Negrita (letra gruesa)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>K</em></p></td>
+<td><p>Cursiva (letra inclinada)</p></td>
+</tr>
+<tr class="row-even"><td><p><u>S</u></p></td>
+<td><p>Subrayado</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>A</strong> con un color</p></td>
+<td><p>Cambiar color de letra</p></td>
+</tr>
+<tr class="row-even"><td><p>Tamaño (un número, ej: 11)</p></td>
+<td><p>Hacer la letra más grande o más chica</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tipo de letra (Arial, etc.)</p></td>
+<td><p>Cambiar el tipo de letra</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Cómo usar:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Seleccionan</strong> el texto al que le quieren cambiar el formato (apretan el botón del mouse al principio y arrastran hasta el final, sin soltar).</p></li>
+<li><p>Tocan el botón que quieran (negrita, color, tamaño, etc.).</p></li>
+</ol>
+</section>
+<section id="ponerle-nombre-al-documento">
+<h3>3. Ponerle nombre al documento<a class="headerlink" href="#ponerle-nombre-al-documento" title="Link to this heading">#</a></h3>
+<p>Arriba a la izquierda dice <strong>«Documento sin título»</strong>.</p>
+<ol class="arabic simple">
+<li><p>Hagan clic ahí.</p></li>
+<li><p>Escriban un nombre: «Carta al consorcio mayo 2026».</p></li>
+<li><p>Apretan Enter.</p></li>
+</ol>
+<p>¡Listo! Ya tiene nombre.</p>
+</section>
+<section id="no-hay-que-guardar-se-guarda-solo">
+<h3>4. No hay que guardar (se guarda solo)<a class="headerlink" href="#no-hay-que-guardar-se-guarda-solo" title="Link to this heading">#</a></h3>
+<p>A diferencia del Word de antes, <strong>acá no hay botón de «Guardar»</strong>. Cada letra que escriben se guarda al instante en internet.</p>
+<p>Pueden cerrar la pestaña sin miedo y al volver, todo está como lo dejaron.</p>
+</section>
+<section id="encontrar-un-documento-viejo">
+<h3>5. Encontrar un documento viejo<a class="headerlink" href="#encontrar-un-documento-viejo" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Van a <strong>docs.google.com</strong>.</p></li>
+<li><p>Abajo del + ven todos los documentos que tienen, con el más reciente arriba.</p></li>
+<li><p>Hacen clic en el que quieran abrir.</p></li>
+</ol>
+</section>
+<section id="compartir-un-documento">
+<h3>6. Compartir un documento<a class="headerlink" href="#compartir-un-documento" title="Link to this heading">#</a></h3>
+<p>Por ejemplo, quieren mandar la carta del consorcio a un vecino para que la lea.</p>
+<p><strong>Opción A — Mandarlo por mail (más fácil):</strong></p>
+<ol class="arabic simple">
+<li><p>Arriba a la derecha tocan <strong>Compartir</strong> (botón azul).</p></li>
+<li><p>Escriben el mail del vecino.</p></li>
+<li><p>Eligen si puede <strong>Ver, Comentar o Editar</strong>:</p>
+<ul class="simple">
+<li><p><strong>Ver</strong>: solo lo puede leer.</p></li>
+<li><p><strong>Comentar</strong>: puede agregar comentarios al costado.</p></li>
+<li><p><strong>Editar</strong>: puede cambiar el documento (cuidado con esto, solo a personas de confianza).</p></li>
+</ul>
+</li>
+<li><p>Tocan <strong>Enviar</strong>.</p></li>
+</ol>
+<p><strong>Opción B — Mandarlo por WhatsApp:</strong></p>
+<ol class="arabic simple">
+<li><p>Tocan <strong>Compartir</strong>.</p></li>
+<li><p>Tocan <strong>Copiar enlace</strong> abajo.</p></li>
+<li><p>Lo pegan en WhatsApp y se lo mandan.</p></li>
+</ol>
+</section>
+<section id="imprimir">
+<h3>7. Imprimir<a class="headerlink" href="#imprimir" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Arriba a la izquierda: <strong>Archivo</strong> → <strong>Imprimir</strong>.</p></li>
+<li><p>(O usen el atajo <strong>Ctrl + P</strong> en Windows / <strong>Cmd + P</strong> en Mac.)</p></li>
+<li><p>Se abre la ventana de impresión.</p></li>
+<li><p>Eligen la impresora y tocan <strong>Imprimir</strong>.</p></li>
+</ol>
+</section>
+</section>
+<section id="parte-2-google-sheets-version-muy-basica">
+<h2>Parte 2 — Google Sheets (versión muy básica)<a class="headerlink" href="#parte-2-google-sheets-version-muy-basica" title="Link to this heading">#</a></h2>
+<p>Vamos a hacer <strong>una sola cosa práctica</strong>: una <strong>lista de gastos del mes</strong>.</p>
+<section id="crear-una-planilla">
+<h3>1. Crear una planilla<a class="headerlink" href="#crear-una-planilla" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Van a <strong>sheets.google.com</strong>.</p></li>
+<li><p>Tocan el <strong>+</strong> o <strong>En blanco</strong>.</p></li>
+</ol>
+<p>Se abre una pantalla con muchísimos <strong>casilleros</strong> (se llaman <strong>celdas</strong>). Cada celda tiene una letra arriba (A, B, C…) y un número al costado (1, 2, 3…). La primera celda es <strong>A1</strong>.</p>
+</section>
+<section id="hacer-una-lista-de-gastos">
+<h3>2. Hacer una lista de gastos<a class="headerlink" href="#hacer-una-lista-de-gastos" title="Link to this heading">#</a></h3>
+<p>Vamos a llenar tres columnas: <strong>Fecha, Concepto, Monto</strong>.</p>
+<ol class="arabic simple">
+<li><p>En la celda <strong>A1</strong>: hacen clic, escriben «Fecha», aprietan <strong>Tab</strong> (se mueven a la derecha).</p></li>
+<li><p>En <strong>B1</strong>: «Concepto», <strong>Tab</strong>.</p></li>
+<li><p>En <strong>C1</strong>: «Monto», <strong>Enter</strong>.</p></li>
+<li><p>Ahora completan así:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Fecha</p></td>
+<td><p>Concepto</p></td>
+<td><p>Monto</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>01/05</p></td>
+<td><p>Súper</p></td>
+<td><p>35000</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>03/05</p></td>
+<td><p>Luz</p></td>
+<td><p>12000</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>05/05</p></td>
+<td><p>Remedios</p></td>
+<td><p>8000</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>10/05</p></td>
+<td><p>Súper</p></td>
+<td><p>28000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para moverse:</p>
+<ul class="simple">
+<li><p><strong>Tab</strong> = a la derecha.</p></li>
+<li><p><strong>Enter</strong> = abajo.</p></li>
+<li><p><strong>Flechas</strong> del teclado = a cualquier lado.</p></li>
+</ul>
+</section>
+<section id="sumar-una-columna-el-truco-magico">
+<h3>3. Sumar una columna (el truco mágico)<a class="headerlink" href="#sumar-una-columna-el-truco-magico" title="Link to this heading">#</a></h3>
+<p>Esto es lo que hace especial a Sheets: <strong>suma sola</strong>.</p>
+<ol class="arabic">
+<li><p>Hagan clic en la celda <strong>C6</strong> (debajo del último monto).</p></li>
+<li><p>Escriban exactamente esto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=</span><span class="n">SUMA</span><span class="p">(</span><span class="n">C2</span><span class="p">:</span><span class="n">C5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Aprietan <strong>Enter</strong>.</p></li>
+</ol>
+<p>Aparece el <strong>total</strong>: 83000.</p>
+<p><strong>Qué significa:</strong> <code class="docutils literal notranslate"><span class="pre">=SUMA(C2:C5)</span></code> quiere decir «sumá todo lo que hay desde C2 hasta C5».</p>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p><strong>Truco más fácil:</strong> Hagan clic en C6 y arriba aparece un botón con la letra griega <strong>Σ</strong> (sigma) o <strong>fx</strong>. Si tocan ese botón y eligen <strong>SUMA</strong>, les ayuda a armar la fórmula sin escribirla a mano.</p>
+</div>
+</section>
+<section id="ponerle-nombre-y-compartir">
+<h3>4. Ponerle nombre y compartir<a class="headerlink" href="#ponerle-nombre-y-compartir" title="Link to this heading">#</a></h3>
+<p>Igual que en Docs:</p>
+<ul class="simple">
+<li><p>Arriba a la izquierda hacen clic en «Hoja de cálculo sin título» → escriben «Gastos mayo 2026».</p></li>
+<li><p>Para compartir: botón <strong>Compartir</strong> arriba a la derecha (igual que en Docs).</p></li>
+</ul>
+</section>
+</section>
+<section id="ejercicios-para-hacer-en-clase">
+<h2>Ejercicios para hacer en clase<a class="headerlink" href="#ejercicios-para-hacer-en-clase" title="Link to this heading">#</a></h2>
+<p><strong>Con Docs:</strong></p>
+<ol class="arabic simple">
+<li><p>✅ Crear un documento llamado «Mi primera nota».</p></li>
+<li><p>✅ Escribir 3 párrafos de cualquier cosa.</p></li>
+<li><p>✅ Poner un título en <strong>negrita</strong> y más grande.</p></li>
+<li><p>✅ Cambiar el color de una palabra a rojo.</p></li>
+<li><p>✅ Cerrar el documento y volver a abrirlo desde docs.google.com.</p></li>
+<li><p>✅ Compartirlo con mi mail (Daniela).</p></li>
+</ol>
+<p><strong>Con Sheets:</strong>
+7. ✅ Crear una planilla nueva.
+8. ✅ Anotar 5 gastos en columnas Fecha / Concepto / Monto.
+9. ✅ Sumar la columna de montos con <code class="docutils literal notranslate"><span class="pre">=SUMA(...)</span></code>.
+10. ✅ Ponerle nombre a la planilla.</p>
+</section>
+<section id="tarea-para-la-semana">
+<h2>📝 Tarea para la semana<a class="headerlink" href="#tarea-para-la-semana" title="Link to this heading">#</a></h2>
+<p>Elijan <strong>una</strong> de estas tareas (la que les parezca más útil):</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Opción Docs — Lista de remedios:</strong> Hacer un documento llamado «Mis remedios» con: nombre del remedio, dosis (cuántos por día), horario y para qué es. Imprimirlo para tenerlo a mano y compartirlo conmigo.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Opción Docs — Carta:</strong> Escribir una carta a alguien (un nieto, un amigo, lo que sea). No la tienen que mandar, es para practicar.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Opción Sheets — Gastos de la semana:</strong> Anotar todos los gastos de los próximos 7 días en una planilla y sumarlos.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Opción mixta:</strong> Hacer una lista de los teléfonos importantes (médico, farmacia, familia, emergencias) en un Docs y compartírselo con sus hijos.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p><strong>No hace falta dominar todo de una.</strong> Con que sepan <strong>abrir, escribir, guardar (que se guarda solo) y compartir</strong> ya cubren el 90% de los usos. Lo demás (formato, fórmulas, etc.) va saliendo con la práctica.</p>
+</div>
+</section>
+<section id="si-algo-sale-mal">
+<h2>Si algo sale mal<a class="headerlink" href="#si-algo-sale-mal" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt><strong>«No encuentro el documento que hice ayer.»</strong></dt><dd><p>Vayan a <strong>docs.google.com</strong> (o <strong>sheets.google.com</strong>). Ahí está la lista de todos sus documentos. Si no aparece, fíjense que estén entrando con <strong>el mail correcto</strong>.</p>
+</dd>
+<dt><strong>«Apareció un cartel azul que dice “Sin conexión”.»</strong></dt><dd><p>Se cortó el internet. Lo que escribieron hasta ese momento puede no haberse guardado. Recuperen internet y vuelvan a abrir el documento.</p>
+</dd>
+<dt><strong>«Borré algo sin querer.»</strong></dt><dd><p>Apreten <strong>Ctrl + Z</strong> (Windows) o <strong>Cmd + Z</strong> (Mac). Es el botón mágico de «deshacer». Se puede usar varias veces para retroceder varios pasos.</p>
+</dd>
+<dt><strong>«La letra se ve muy chica.»</strong></dt><dd><p>Pueden hacer dos cosas:</p>
+<ul class="simple">
+<li><p>Cambiar el <strong>tamaño del texto</strong> desde la barra de arriba (donde dice un número como 11).</p></li>
+<li><p>Hacer <strong>zoom</strong> a toda la pantalla: <strong>Ctrl + +</strong> para agrandar, <strong>Ctrl + -</strong> para achicar.</p></li>
+</ul>
+</dd>
+<dt><strong>«Compartí un documento y no me llega respuesta.»</strong></dt><dd><p>Verifiquen que escribieron bien el mail de la otra persona. Y avísenle por WhatsApp («Te mandé un documento, fijate en el mail»).</p>
+</dd>
+<dt><strong>«Mi planilla no suma bien.»</strong></dt><dd><p>Lo más común es que la fórmula esté mal escrita. Tiene que empezar con <strong>=</strong> (signo igual). Si pusieron números con letras o con comas raras, la suma falla.</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>➡️ <strong>Próxima clase:</strong> <a class="reference internal" href="clase-5-ia.html"><span class="std std-doc">Inteligencia Artificial</span></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="clase-3-calendar.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Clase 3 — Google Calendar</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="clase-5-ia.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Clase 5 — Inteligencia Artificial (IA)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-les-sirve">Para qué les sirve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-la-vida-real">Ejemplos de la vida real</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1-google-docs">Parte 1 — Google Docs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-documento-nuevo">1. Crear un documento nuevo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escribir-y-darle-formato">2. Escribir y darle formato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ponerle-nombre-al-documento">3. Ponerle nombre al documento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-hay-que-guardar-se-guarda-solo">4. No hay que guardar (se guarda solo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encontrar-un-documento-viejo">5. Encontrar un documento viejo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-un-documento">6. Compartir un documento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imprimir">7. Imprimir</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-2-google-sheets-version-muy-basica">Parte 2 — Google Sheets (versión muy básica)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-planilla">1. Crear una planilla</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hacer-una-lista-de-gastos">2. Hacer una lista de gastos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumar-una-columna-el-truco-magico">3. Sumar una columna (el truco mágico)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ponerle-nombre-y-compartir">4. Ponerle nombre y compartir</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Daniela
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Clase 2 — Google Meet &#8212; Curso de Tecnología</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=c2101671"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clase-2-meet';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Clase 3 — Google Calendar" href="clase-3-calendar.html" />
+    <link rel="prev" title="Clase 1 — WhatsApp" href="clase-1-whatsapp.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Curso de Tecnología</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="como-usar.html">Cómo usar este curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-1-whatsapp.html">Clase 1 — WhatsApp</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clase 2 — Google Meet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-3-calendar.html">Clase 3 — Google Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-4-docs-sheets.html">Clase 4 — Google Docs y Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase-5-ia.html">Clase 5 — Inteligencia Artificial (IA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursos.html">Recursos y chuleta general</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/clase-2-meet.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Clase 2 — Google Meet</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-les-sirve">Para qué les sirve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuando-van-a-usar-meet-en-su-vida">¿Cuándo van a usar Meet en su vida?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-la-vida-real">Ejemplo de la vida real</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso">Paso a paso</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-a-entrar-a-una-reunion-cuando-les-mandan-un-link-lo-mas-comun">Parte A — Entrar a una reunión cuando les mandan un link (lo más común)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-link-les-llega-por-whatsapp">Si el link les llega por WhatsApp:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-link-les-llega-por-mail">Si el link les llega por mail:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-una-vez-que-tocaron-el-link">1B — Una vez que tocaron el link:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-b-crear-una-reunion-y-mandar-el-link">Parte B — Crear una reunión y mandar el link</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desde-la-computadora-mas-facil">Desde la computadora (más fácil):</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desde-el-celular">Desde el celular:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-c-durante-la-reunion">Parte C — Durante la reunión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-d-cosas-utiles-que-no-son-obvias">Parte D — Cosas útiles que no son obvias</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="clase-2-google-meet">
+<h1>Clase 2 — Google Meet<a class="headerlink" href="#clase-2-google-meet" title="Link to this heading">#</a></h1>
+<p>⏱️ <strong>Duración:</strong> 1 hora
+📱💻 <strong>Dispositivo:</strong> celular y computadora</p>
+<section id="para-que-les-sirve">
+<h2>Para qué les sirve<a class="headerlink" href="#para-que-les-sirve" title="Link to this heading">#</a></h2>
+<p><strong>Google Meet</strong> es una app para hacer <strong>videollamadas</strong>, parecido a la videollamada de WhatsApp, pero con algunas diferencias importantes:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>WhatsApp</p></th>
+<th class="head"><p>Google Meet</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Necesitan tener el contacto agendado</p></td>
+<td><p>Solo necesitan el <strong>link</strong> que les manden</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hasta 32 personas</p></td>
+<td><p>Hasta 100 personas</p></td>
+</tr>
+<tr class="row-even"><td><p>Solo en el celular (sin link)</p></td>
+<td><p>Funciona en celular <strong>y</strong> computadora</p></td>
+</tr>
+<tr class="row-odd"><td><p>Más informal</p></td>
+<td><p>Más usado para reuniones formales</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="cuando-van-a-usar-meet-en-su-vida">
+<h3>¿Cuándo van a usar Meet en su vida?<a class="headerlink" href="#cuando-van-a-usar-meet-en-su-vida" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Turno médico online</strong>: muchos médicos ahora atienden por Meet. Les mandan un link y a la hora del turno entran.</p></li>
+<li><p><strong>Reunión del consorcio del edificio</strong>.</p></li>
+<li><p><strong>Charla con alguien que no tiene WhatsApp</strong> (por ejemplo, alguien de afuera del país que usa otra app).</p></li>
+<li><p><strong>Hablar con un nieto que está estudiando</strong> y necesita la pantalla grande de la computadora.</p></li>
+<li><p><strong>Trámites</strong>: muchas oficinas atienden por videollamada ahora.</p></li>
+</ul>
+</section>
+<section id="ejemplo-de-la-vida-real">
+<h3>Ejemplo de la vida real<a class="headerlink" href="#ejemplo-de-la-vida-real" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><em>«La doctora le manda un mensaje a las 9:30 de la mañana: “Para su turno de las 10:00, entre por este link: meet.google.com/abc-defg-hij”. ¿Qué hacen?»</em></p>
+<p>Esta clase es para que sepan exactamente qué hacer en ese momento, sin ponerse nerviosos.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="antes-de-empezar">
+<h2>Antes de empezar<a class="headerlink" href="#antes-de-empezar" title="Link to this heading">#</a></h2>
+<p>Necesitan:</p>
+<ul class="simple">
+<li><p>Una <strong>cuenta de Gmail</strong> (si tienen Gmail, ya tienen Meet sin instalar nada). El mail termina en <code class="docutils literal notranslate"><span class="pre">&#64;gmail.com</span></code>.</p></li>
+<li><p>La <strong>contraseña</strong> de Gmail.</p></li>
+<li><p>Internet (Wi-Fi mejor que datos móviles porque consume bastante).</p></li>
+<li><p>En el celular: instalar la app <strong>Google Meet</strong> (ícono con 3 puntitos de colores y una cámara). En muchos celulares ya viene instalada.</p></li>
+<li><p>En la computadora: no hace falta instalar nada, se usa desde <strong>Google Chrome</strong>.</p></li>
+</ul>
+</section>
+<section id="paso-a-paso">
+<h2>Paso a paso<a class="headerlink" href="#paso-a-paso" title="Link to this heading">#</a></h2>
+<section id="parte-a-entrar-a-una-reunion-cuando-les-mandan-un-link-lo-mas-comun">
+<h3>Parte A — Entrar a una reunión cuando les mandan un link (lo más común)<a class="headerlink" href="#parte-a-entrar-a-una-reunion-cuando-les-mandan-un-link-lo-mas-comun" title="Link to this heading">#</a></h3>
+<p>Esta es la situación más frecuente: alguien les manda un link y ustedes tienen que entrar.</p>
+<section id="si-el-link-les-llega-por-whatsapp">
+<h4>Si el link les llega por WhatsApp:<a class="headerlink" href="#si-el-link-les-llega-por-whatsapp" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Abren el chat donde está el link.</p></li>
+<li><p>El link se ve <strong>azul</strong> y dice algo como <code class="docutils literal notranslate"><span class="pre">meet.google.com/abc-defg-hij</span></code>.</p></li>
+<li><p><strong>Tocan el link</strong>.</p></li>
+<li><p>Se abre Google Meet automáticamente.</p></li>
+<li><p>Sigan al <strong>paso 1B</strong> (más abajo).</p></li>
+</ol>
+</section>
+<section id="si-el-link-les-llega-por-mail">
+<h4>Si el link les llega por mail:<a class="headerlink" href="#si-el-link-les-llega-por-mail" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Abren Gmail.</p></li>
+<li><p>Abren el mail donde está el link.</p></li>
+<li><p><strong>Tocan el link azul</strong>.</p></li>
+<li><p>Sigan al <strong>paso 1B</strong>.</p></li>
+</ol>
+</section>
+<section id="b-una-vez-que-tocaron-el-link">
+<h4>1B — Una vez que tocaron el link:<a class="headerlink" href="#b-una-vez-que-tocaron-el-link" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Pueden aparecer dos opciones:</p>
+<ul class="simple">
+<li><p><strong>Unirse desde la app</strong> (si están en el celular).</p></li>
+<li><p><strong>Unirse desde el navegador</strong>.
+Elijan <strong>app</strong> si están en el celular, o <strong>navegador</strong> si están en la compu.</p></li>
+</ul>
+</li>
+<li><p>Se ve su cara en la pantalla (eso es la <strong>vista previa</strong>, todavía nadie los ve).</p></li>
+<li><p><strong>Antes de entrar</strong>, fíjense en dos botones abajo:</p>
+<ul class="simple">
+<li><p>🎤 <strong>Micrófono</strong> — si está tachado, no los van a escuchar. Tóquenlo para activarlo.</p></li>
+<li><p>📷 <strong>Cámara</strong> — si está tachado, no los van a ver. Tóquenlo para activarla.</p></li>
+</ul>
+</li>
+<li><p>Tocan <strong>Unirse</strong> o <strong>Pedir unirse</strong>.</p></li>
+<li><p>Si dice <strong>«Esperando a que te admitan»</strong>, no se preocupen: la persona que organizó la reunión los tiene que aceptar. Esperen un minuto.</p></li>
+<li><p>¡Ya están adentro! 🎉</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p><strong>Lleguen 2 minutos antes</strong> del horario. Así, si hay algún problema (no funciona el micrófono, el link no abre), tienen tiempo de resolverlo sin llegar tarde.</p>
+</div>
+</section>
+</section>
+<section id="parte-b-crear-una-reunion-y-mandar-el-link">
+<h3>Parte B — Crear una reunión y mandar el link<a class="headerlink" href="#parte-b-crear-una-reunion-y-mandar-el-link" title="Link to this heading">#</a></h3>
+<p>A veces ustedes son los que organizan. Por ejemplo, quieren juntar a la familia que vive lejos para charlar todos juntos.</p>
+<section id="desde-la-computadora-mas-facil">
+<h4>Desde la computadora (más fácil):<a class="headerlink" href="#desde-la-computadora-mas-facil" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Abren <strong>Google Chrome</strong>.</p></li>
+<li><p>Van a <strong>meet.google.com</strong>.</p></li>
+<li><p>Si les pide entrar, ponen su mail de Gmail y la contraseña.</p></li>
+<li><p>Tocan <strong>Nueva reunión</strong>.</p></li>
+<li><p>Eligen <strong>Iniciar una reunión al instante</strong>.</p></li>
+<li><p>Se abre la reunión.</p></li>
+<li><p>Arriba aparece el <strong>link</strong> (algo como <code class="docutils literal notranslate"><span class="pre">meet.google.com/abc-defg-hij</span></code>).</p></li>
+<li><p>Tocan <strong>Copiar link</strong>.</p></li>
+<li><p>Lo pegan en un chat de WhatsApp o un mail y se lo mandan a quienes quieran invitar.</p></li>
+</ol>
+</section>
+<section id="desde-el-celular">
+<h4>Desde el celular:<a class="headerlink" href="#desde-el-celular" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Abren la app <strong>Google Meet</strong> (el ícono).</p></li>
+<li><p>Tocan <strong>Nueva reunión</strong>.</p></li>
+<li><p>Eligen <strong>Obtener un enlace para compartir</strong> (si quieren mandar el link antes) o <strong>Iniciar una reunión al instante</strong> (si quieren empezar ya).</p></li>
+<li><p>Comparten el link por WhatsApp.</p></li>
+</ol>
+</section>
+</section>
+<section id="parte-c-durante-la-reunion">
+<h3>Parte C — Durante la reunión<a class="headerlink" href="#parte-c-durante-la-reunion" title="Link to this heading">#</a></h3>
+<p>Una vez adentro, los botones que más van a usar:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Botón</p></th>
+<th class="head"><p>Para qué sirve</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>🎤 Micrófono</p></td>
+<td><p>Activar o silenciar su voz. <strong>Cuando no hablan, mejor silenciado</strong>, así no se escucha ruido de fondo.</p></td>
+</tr>
+<tr class="row-odd"><td><p>📷 Cámara</p></td>
+<td><p>Mostrar o esconder su cara.</p></td>
+</tr>
+<tr class="row-even"><td><p>💬 Chat</p></td>
+<td><p>Escribir mensajes a los demás sin hablar.</p></td>
+</tr>
+<tr class="row-odd"><td><p>✋ Levantar la mano</p></td>
+<td><p>Avisar que quieren hablar sin interrumpir.</p></td>
+</tr>
+<tr class="row-even"><td><p>📞 Colgar (rojo)</p></td>
+<td><p>Salir de la reunión.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>El botón <strong>rojo de colgar</strong> termina la videollamada. Si lo apretan sin querer, vuelvan a entrar al mismo link.</p>
+</div>
+</section>
+<section id="parte-d-cosas-utiles-que-no-son-obvias">
+<h3>Parte D — Cosas útiles que no son obvias<a class="headerlink" href="#parte-d-cosas-utiles-que-no-son-obvias" title="Link to this heading">#</a></h3>
+<p><strong>1. Verse la cara antes de entrar</strong></p>
+<p>En la pantalla de «vista previa» (antes de tocar <strong>Unirse</strong>), pueden acomodar la cámara, ver si tienen luz, peinarse, lo que quieran. Nadie los está viendo todavía.</p>
+<p><strong>2. Silenciar el micrófono cuando no hablan</strong></p>
+<p>Si están escuchando una charla larga (médico, reunión), <strong>silencien el micrófono</strong> para que no se escuche el ruido de casa. Para silenciar: tocan el ícono de micrófono y queda tachado.</p>
+<p><strong>3. Ver a una persona en grande</strong></p>
+<p>Si hay muchas personas y quieren ver a una sola en grande:</p>
+<ul class="simple">
+<li><p>En la computadora: hacen clic en el cuadrito de esa persona y se pone en grande.</p></li>
+<li><p>En el celular: lo mismo, tocan el cuadrito.</p></li>
+</ul>
+<p><strong>4. Cambiar a la cámara de atrás del celular</strong></p>
+<p>Si están en el celular y quieren mostrar algo que está enfrente (no su cara), hay un ícono de <strong>flechitas circulares 🔄</strong> o <strong>cambio de cámara</strong> que da vuelta la cámara hacia adelante. Útil para mostrar algo a la otra persona.</p>
+</section>
+</section>
+<section id="ejercicios-para-hacer-en-clase">
+<h2>Ejercicios para hacer en clase<a class="headerlink" href="#ejercicios-para-hacer-en-clase" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>✅ Crear una reunión nueva desde la computadora y copiar el link.</p></li>
+<li><p>✅ Mandar ese link a mi celular por WhatsApp.</p></li>
+<li><p>✅ Entrar a esa reunión desde el celular (vamos a estar las dos en la misma reunión, una desde la compu y otra desde el celu).</p></li>
+<li><p>✅ Probar prender y apagar el micrófono y la cámara.</p></li>
+<li><p>✅ Escribir un mensaje en el chat.</p></li>
+<li><p>✅ Levantar la mano.</p></li>
+<li><p>✅ Salir de la reunión y volver a entrar.</p></li>
+</ol>
+</section>
+<section id="tarea-para-la-semana">
+<h2>📝 Tarea para la semana<a class="headerlink" href="#tarea-para-la-semana" title="Link to this heading">#</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Día 1:</strong> Yo les mando un link de Meet. Ustedes lo abren y entramos a una reunión juntas.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Día 2:</strong> Crean una reunión nueva ustedes mismos y me mandan el link. Yo me uno.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Día 3:</strong> Invitan a alguien más (un nieto, un sobrino) a una reunión de Meet, aunque sea por 5 minutos.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Día 4:</strong> Practiquen entrar a una reunión <strong>desde el celular</strong> y desde <strong>la computadora</strong>, para que les salga natural en los dos.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p><strong>Si alguna vez tienen un turno médico por Meet:</strong> lean esta clase <strong>el día antes</strong>. No quieran «acordarse» sobre la marcha. Cinco minutos de repaso evitan media hora de estrés.</p>
+</div>
+</section>
+<section id="si-algo-sale-mal">
+<h2>Si algo sale mal<a class="headerlink" href="#si-algo-sale-mal" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt><strong>«Toqué el link y no pasó nada.»</strong></dt><dd><p>Probá tocarlo otra vez, despacio. Si no funciona, <strong>copiá el link</strong> (mantener apretado el link → Copiar) y pegalo en el navegador (Chrome).</p>
+</dd>
+<dt><strong>«Me dice “Esperando a que te admitan”.»</strong></dt><dd><p>No es un error. La persona que organizó la reunión los tiene que aceptar. Esperen. Si pasan más de 2 minutos, mándenle un mensaje por WhatsApp avisando que están esperando.</p>
+</dd>
+<dt><strong>«No me escuchan.»</strong></dt><dd><p>Fíjense que el ícono de <strong>micrófono no esté tachado</strong>. Si está tachado, tóquenlo. También puede ser que el celular o la compu no tengan permiso para usar el micrófono — en ese caso aparece un cartel arriba que dice «Permitir micrófono». Toquen <strong>Permitir</strong>.</p>
+</dd>
+<dt><strong>«No me ven.»</strong></dt><dd><p>Mismo problema con la <strong>cámara</strong>. Tóquenla para activarla. Si dice «Permitir cámara», toquen <strong>Permitir</strong>.</p>
+</dd>
+<dt><strong>«Mi cara se ve oscura.»</strong></dt><dd><p>Es porque la luz les viene de atrás (de una ventana). Pónganse de frente a la luz, no de espalda.</p>
+</dd>
+<dt><strong>«Se corta y se vuelve a cortar.»</strong></dt><dd><p>Es problema de internet. Si están con datos móviles, intenten conectarse al Wi-Fi. Si están con Wi-Fi y aun así se corta, acérquense al router (la cajita de internet de la casa).</p>
+</dd>
+<dt><strong>«Apreté el botón rojo sin querer y salí.»</strong></dt><dd><p>Volvé a entrar al mismo link. Nadie se enoja.</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>➡️ <strong>Próxima clase:</strong> <a class="reference internal" href="clase-3-calendar.html"><span class="std std-doc">Google Calendar</span></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="clase-1-whatsapp.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Clase 1 — WhatsApp</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="clase-3-calendar.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Clase 3 — Google Calendar</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-les-sirve">Para qué les sirve</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuando-van-a-usar-meet-en-su-vida">¿Cuándo van a usar Meet en su vida?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-la-vida-real">Ejemplo de la vida real</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antes-de-empezar">Antes de empezar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso">Paso a paso</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-a-entrar-a-una-reunion-cuando-les-mandan-un-link-lo-mas-comun">Parte A — Entrar a una reunión cuando les mandan un link (lo más común)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-link-les-llega-por-whatsapp">Si el link les llega por WhatsApp:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#si-el-link-les-llega-por-mail">Si el link les llega por mail:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-una-vez-que-tocaron-el-link">1B — Una vez que tocaron el link:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-b-crear-una-reunion-y-mandar-el-link">Parte B — Crear una reunión y mandar el link</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desde-la-computadora-mas-facil">Desde la computadora (más fácil):</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#desde-el-celular">Desde el celular:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-c-durante-la-reunion">Parte C — Durante la reunión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-d-cosas-utiles-que-no-son-obvias">Parte D — Cosas útiles que no son obvias</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-para-hacer-en-clase">Ejercicios para hacer en clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarea-para-la-semana">📝 Tarea para la semana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#si-algo-sale-mal">Si algo sale mal</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Daniela
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
