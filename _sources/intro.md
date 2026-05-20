@@ -1,4 +1,4 @@
-# Bienvenidos
+# Sobre este curso
 
 Este es un curso de tecnología pensado especialmente para ustedes: con calma, con muchos ejemplos, y con tareas para practicar en casa.
 
