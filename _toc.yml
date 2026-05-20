@@ -1,0 +1,10 @@
+format: jb-book
+root: intro
+chapters:
+  - file: como-usar
+  - file: clase-1-whatsapp
+  - file: clase-2-meet
+  - file: clase-3-calendar
+  - file: clase-4-docs-sheets
+  - file: clase-5-ia
+  - file: recursos

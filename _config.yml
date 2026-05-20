@@ -1,0 +1,41 @@
+title: Curso de Tecnología
+author: Daniela
+copyright: "2026"
+logo: ""
+
+execute:
+  execute_notebooks: "off"
+
+html:
+  use_issues_button: false
+  use_repository_button: false
+  favicon: ""
+  baseurl: ""
+  home_page_in_navbar: true
+  extra_footer: |
+    <p>Hecho con cariño para mamá y papá.</p>
+
+sphinx:
+  config:
+    language: es
+    html_show_copyright: false
+    html_theme_options:
+      show_toc_level: 2
+      show_navbar_depth: 2
+      collapse_navigation: false
+      navigation_with_keys: true
+    latex_elements:
+      preamble: |
+        \usepackage{fontspec}
+        \setmainfont{Helvetica}
+
+latex:
+  latex_documents:
+    targetname: curso-tecnologia.tex
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - deflist
+    - tasklist
+    - substitution
