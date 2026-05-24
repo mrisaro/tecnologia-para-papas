@@ -1,7 +1,8 @@
 format: jb-book
 root: intro
 parts:
-  - chapters:
+  - caption: Clases
+    chapters:
       - file: como-usar
       - file: clase-1-whatsapp
       - file: clase-2-meet
@@ -12,5 +13,6 @@ parts:
     chapters:
       - file: clase-6-seguridad
       - file: simulacro-phishing
-  - chapters:
+  - caption: Para consultar
+    chapters:
       - file: recursos
