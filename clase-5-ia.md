@@ -226,4 +226,4 @@ Lo más importante que se llevan no son las apps. Es **la confianza** para proba
 4. **Recuerden la regla de oro:** si algo en la pantalla les pide plata, contraseñas o códigos, **no toquen nada**. Pregúntenme primero.
 5. **Diviértanse.** La tecnología es para hacerles la vida más fácil, no más complicada. Si una herramienta los estresa, déjenla y vuelvan otro día.
 
-➡️ Vayan a la página de [Recursos](recursos.md) para ver un **machete** con todo lo importante en una sola página.
+➡️ **Antes de cerrar:** vayan al [Simulacro de phishing](simulacro-phishing.md) para practicar a reconocer mensajes truchos. Y al [Machete general](recursos.md) que tiene todo lo importante en una sola página.
