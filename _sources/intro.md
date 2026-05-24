@@ -12,6 +12,8 @@ En **cinco clases de una hora**, vamos a ver las cosas que más se usan en el d�
 4. **Google Docs y Sheets**: para escribir cartas, hacer listas y llevar las cuentas.
 5. **Inteligencia Artificial (IA)**: un asistente al que le pueden preguntar cualquier cosa.
 
+Y al final del curso hay un **simulacro de phishing**: una página para practicar a reconocer estafas digitales con ejemplos reales que circulan en Argentina.
+
 ## ¿Cómo está pensado?
 
 Cada clase dura **una hora** y siempre tiene la misma estructura:
