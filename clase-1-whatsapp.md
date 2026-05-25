@@ -30,11 +30,13 @@ Si no saben si WhatsApp está instalado, busquen en la pantalla del celular un c
 
 ### 1. Las tres pestañas principales
 
-Cuando abren WhatsApp, hay tres pestañas (arriba o abajo según el celular):
+Cuando abren WhatsApp, hay tres/cuatro pestañas (arriba o abajo según el celular):
 
 - **Chats**: las conversaciones.
 - **Llamadas**: el historial de llamadas y videollamadas.
-- **Novedades** o **Estados**: fotos y videos que la gente sube por 24 horas. Lo dejamos para más adelante.
+- **Novedades** y/o **Estados**: fotos y videos que la gente sube por 24 horas. Lo dejamos para más adelante.
+
+![Barra de WhatsApp en celular android google pixel](images/chat_whatsapp_1.png)
 
 ### 2. Mandar una nota de voz 🎤
 
