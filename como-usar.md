@@ -78,6 +78,10 @@ Apretar la tecla **Windows + Shift + S**. La pantalla se pone gris y pueden eleg
 
 Apretar **Command + Shift + 4**. La pantalla se pone gris y pueden elegir un pedazo con el mouse. La foto queda en el Escritorio.
 
+### En la computadora (Ubuntu)
+
+Apretar **Impr pant**. Se despliega un menú en la parte de abajo dónde es posible elegir: total de pantalla o selección. 
+
 ## ¿Listos?
 
 A la próxima clase: WhatsApp 📱
