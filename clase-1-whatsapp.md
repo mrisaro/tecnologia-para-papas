@@ -10,6 +10,7 @@ WhatsApp ya lo usan para chatear, pero tiene un montón de funciones que muchas 
 - **Notas de voz** cuando da fiaca escribir.
 - **Videollamadas** para ver a la persona, no solo escucharla.
 - Mandar y guardar **fotos** sin que se mezclen con todo lo demás del celular.
+- Podemos mandar también documentos (.pdf, .docx, etc) a contactos o a nosotros mismos.
 - Armar un **grupo** para coordinar con varias personas a la vez.
 - Compartir la **ubicación** cuando alguien los pasa a buscar o quieren mostrar dónde están.
 - Cómo **no caer en estafas** por WhatsApp.
